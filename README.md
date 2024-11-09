@@ -2,15 +2,17 @@
 
 ## Setup
 
+Installation Steps
 First, install nvim and all related dependancies. Suggest just using the install recipes in kickstart.nvim
 Second, clone this repository into config files section.
-This could be in several places, for Windows it is:
-  `git clone https://github.com/EdgarAllenExile/nvim.config $HOME/AppData/Local/nvim`
+This could be in several places:
 
+- In Windows it is: `git clone https://github.com/EdgarAllenExile/nvim.config $HOME/AppData/Local/nvim`
+- In Linux use: `git clone https://github.com/EdgarAllenExile/nvim.config "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim`
+  
 ## Plugins
 
 | Plugin | Description | Link |
-
 |--------|-------------|--------|
 | AutoPairs | Autocompletion of brackets | config/autopairs.lua|
 | Confirm |  | config/conform.lua|
