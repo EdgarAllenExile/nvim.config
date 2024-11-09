@@ -34,4 +34,5 @@ require('lazy').setup({
       lazy = '💤 ',
     },
   },
+  checker = { enabled = true },
 })
