@@ -9,7 +9,15 @@ This could be in several places:
 
 - In Windows it is: `git clone https://github.com/EdgarAllenExile/nvim.config $HOME/AppData/Local/nvim`
 - In Linux use: `git clone https://github.com/EdgarAllenExile/nvim.config "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim`
-  
+
+### Dependancies
+
+There are quite a few dependancies that will need to be installed for proper function:
+
+- Windows Install Recipe:
+  - Chocolatey Install Script: `winget install --accept-source-agreements chocolatey.chocolatey`
+  - NPM Install Script: `winget install -e --id OpenJS.NodeJS`
+
 ## Plugins
 
 | Plugin | Description | Link |
