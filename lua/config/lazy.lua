@@ -13,6 +13,11 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   spec = {
     { import = 'plugins' },
+    { import = 'plugins/automagic' },
+    { import = 'plugins/edit-tools' },
+    { import = 'plugins/helpers' },
+    { import = 'plugins/tools' },
+    { import = 'plugins/ui' },
   },
 }, {
   ui = {
