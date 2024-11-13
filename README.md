@@ -27,7 +27,7 @@ There are quite a few dependancies that will need to be installed for proper fun
 | Dap | Debugging | config/dap.lua |
 | GitSigns | Git Update Indicators | config/gitsigns.lua |
 | Indent_line | Line indentations | config/indent_line.lua |
-| LazyDev | ?? | config/lazydev.lua |
+| LazyDev | Per workspace plugin loading | config/lazydev.lua |
 | Lint | Configure Linters | config/lint.lua |
 | LspConfig | Set up LSPs | config/lspconfig.lua |
 | Luvit | ?? | config/luvit-meta.lua |
