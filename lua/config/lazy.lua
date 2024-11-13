@@ -16,6 +16,7 @@ require('lazy').setup({
     { import = 'plugins/automagic' },
     { import = 'plugins/edit-tools' },
     { import = 'plugins/helpers' },
+    { import = 'plugins/languages' },
     { import = 'plugins/tools' },
     { import = 'plugins/ui' },
   },
