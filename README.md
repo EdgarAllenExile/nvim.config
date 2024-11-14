@@ -22,25 +22,27 @@ There are quite a few dependancies that will need to be installed for proper fun
 
 | Plugin | Description | Link |
 |--------|-------------|--------|
-| AutoPairs | Autocompletion of brackets | config/autopairs.lua|
-| Confirm |  | config/conform.lua|
-| Dap | Debugging | config/dap.lua |
-| GitSigns | Git Update Indicators | config/gitsigns.lua |
-| Indent_line | Line indentations | config/indent_line.lua |
-| LazyDev | Per workspace plugin loading | config/lazydev.lua |
-| Lint | Configure Linters | config/lint.lua |
-| LspConfig | Set up LSPs | config/lspconfig.lua |
+| AutoPairs | Autocompletion of brackets | config/automagic/autopairs.lua|
+| Conform | Auto-Formatter | config/edit-tools/conform.lua|
+| Dap | Debugging | config/edit-tools/dap.lua |
+| GitSigns | Git Update Indicators | config/ui/gitsigns.lua |
+| Indent_line | Line indentations | config/automagic/indent_line.lua |
+| LazyDev | Per workspace plugin loading | config/edit-tools/lazydev.lua |
+| Lint | Configure Linters | config/edit-tools/lint.lua |
+| LspConfig | Set up LSPs | config/edit-tools/lspconfig.lua |
 | Luvit | ?? | config/luvit-meta.lua |
 | Mini.Nvim | Collection of small plugins | config/mini.nvim.lua |
-| NeoTree | Tree Plugin | config/neo-tree.lua |
-| NvimCmp | Auto-Complete | config/nvim-cmp.lua |
-| WindowPicker | Chose windows from tree | config/nvim-window-picker.lua |
-| Render-Markdown | .md renderer | config/render-markdown.lua |
-| Sonokai | Colourscheme | config/sonokai.lua |
-| Telescope | FuzzyFinder | config/telescope.lua |
-| Todo Comments | Sign Post and Highlight Comments | config/todo-commends.lua |
-| Treesitter | Treesitter | config/treesitter.lua |
-| Vim Slueth | Adjusts tab based on current file | config/vim-sleuth.lua |
+| NeoTree | Tree Plugin | config/tools/neo-tree.lua |
+| NvimCmp | Auto-Complete | config/automagic/nvim-cmp.lua |
+| WindowPicker | Chose windows from tree | config/tools/nvim-window-picker.lua |
+| Render-Markdown | .md renderer | config/ui/render-markdown.lua |
+| Sonokai | Colourscheme | config/ui/sonokai.lua |
+| Telescope | FuzzyFinder | config/tools/telescope.lua |
+| Todo Comments | Sign Post and Highlight Comments | config/ui/todo-commends.lua |
+| Treesitter | Treesitter | config/edit-tools/treesitter.lua |
+| Vim Slueth | Adjusts tab based on current file | config/automagic/vim-sleuth.lua |
 | Which Key | Display available key combinations | config/which-key.lua |
-| Hardtime | Stops inefficient inputs | config/tips/hardtime.lua |
-| Prediction | Shows Cursor Movement Inputs | config/tips/prediction/lua |
+| Hardtime | Stops inefficient inputs | config/helpers/hardtime.lua |
+| Prediction | Shows Cursor Movement Inputs | config/helpers/prediction/lua |
+| Rustacean | Rust Language Utils | config/languages/rust.lua |
+| Bufferline | Window Tabs | config/ui/bufferline.lua | 
