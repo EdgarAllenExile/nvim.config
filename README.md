@@ -46,3 +46,7 @@ There are quite a few dependancies that will need to be installed for proper fun
 | Prediction | Shows Cursor Movement Inputs | config/helpers/prediction/lua |
 | Rustacean | Rust Language Utils | config/languages/rust.lua |
 | Bufferline | Window Tabs | config/ui/bufferline.lua | 
+
+## Other Language Things
+
+Will need to install a LISP language server or similar if you want to use CONJURE. VALE is possible to use, but it annoyed me so I stopped.
