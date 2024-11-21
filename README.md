@@ -54,3 +54,13 @@ Will need to install a LISP language server or similar if you want to use CONJUR
 ### Common Lisp
 
 To get started and use common lisp with clojure, we need to also install Roswell. Recommend following the install instructions on the conjure GH: `https://github.com/Olical/conjure/wiki/Quick-start:-Common-Lisp-(Swank)`
+
+- Start by installing Scoop:
+  - `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser`
+  - `Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression`
+- Then use Scoop to install roswell: 
+- `scoop install roswell`
+
+Then you can CD into the project folder in a different terminal, start up a swank server to get things rolling on port 4005. Command to start the server is:
+
+`ros run --eval '(ql:quickload :swank)'  --eval '(swank:create-server :dont-close t)'`
