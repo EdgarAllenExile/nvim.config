@@ -50,3 +50,7 @@ There are quite a few dependancies that will need to be installed for proper fun
 ## Other Language Things
 
 Will need to install a LISP language server or similar if you want to use CONJURE. VALE is possible to use, but it annoyed me so I stopped.
+
+### Common Lisp
+
+To get started and use common lisp with clojure, we need to also install Roswell. Recommend following the install instructions on the conjure GH: `https://github.com/Olical/conjure/wiki/Quick-start:-Common-Lisp-(Swank)`
