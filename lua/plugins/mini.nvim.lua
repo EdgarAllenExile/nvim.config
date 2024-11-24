@@ -1,5 +1,6 @@
 return { -- Collection of various small independent plugins/modules
   'echasnovski/mini.nvim',
+  version = false,
   config = function()
     -- Better Around/Inside textobjects
     --
@@ -33,5 +34,11 @@ return { -- Collection of various small independent plugins/modules
 
     -- ... and there is more!
     --  Check out: https://github.com/echasnovski/mini.nvim
+  end,
+  init = function()
+    package.preload['nvim-web-devicons'] = function()
+      require('mini.icons').mock_nvim_web_devicons()
+      return package.loaded['nvim-web-devicons']
+    end
   end,
 }
