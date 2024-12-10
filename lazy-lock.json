@@ -37,6 +37,7 @@
   "precognition.nvim": { "branch": "main", "commit": "0189e8d6f96275a079b2805d68d49414871885cd" },
   "render-markdown.nvim": { "branch": "main", "commit": "d80acb3f4ccc88052f65fa0a26e46c106b328bbe" },
   "rustaceanvim": { "branch": "master", "commit": "e1f9464d9e1addeccb170eb7968471966965f5a3" },
+  "smart-splits.nvim": { "branch": "master", "commit": "264e865589389409f1ac1da7673b1b732b1e8963" },
   "smear-cursor.nvim": { "branch": "main", "commit": "3cacbf0fa4ccefd4391ac47b7776444d2af08d46" },
   "sonokai": { "branch": "master", "commit": "3dcd97c0c5e4118bc171df6ba33800dfd9524a00" },
   "telescope-fzf-native.nvim": { "branch": "main", "commit": "cf48d4dfce44e0b9a2e19a008d6ec6ea6f01a83b" },
