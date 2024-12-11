@@ -5,7 +5,9 @@ return {
     config = function()
       require('smart-splits').setup()
 
-      vim.keymap.set('n', '<C-w><C-r>', require('smart-splits').start_resize_mode())
+      vim.keymap.set('n', '<C-w><C-r>', function()
+        require('smart-splits').start_resize_mode()
+      end)
 
       -- resizing splits
       -- these keymaps will also accept a range,
