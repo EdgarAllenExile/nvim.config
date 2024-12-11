@@ -3,8 +3,6 @@ vim.g.maplocalleader = ' '
 
 vim.g.have_nerd_font = true
 
--- vim.keymap.set('<Up>', '<Up>', '<nop>')
-
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
