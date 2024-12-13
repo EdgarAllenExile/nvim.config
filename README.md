@@ -46,6 +46,7 @@ There are quite a few dependancies that will need to be installed for proper fun
 | Prediction | Shows Cursor Movement Inputs | config/helpers/prediction/lua |
 | Rustacean | Rust Language Utils | config/languages/rust.lua |
 | Bufferline | Window Tabs | config/ui/bufferline.lua | 
+| Smart-Splits | Pane splitting utility | config/tools/smart-splits.lua |
 
 ## Other Language Things
 
