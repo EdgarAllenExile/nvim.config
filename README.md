@@ -47,10 +47,18 @@ There are quite a few dependancies that will need to be installed for proper fun
 | Rustacean | Rust Language Utils | config/languages/rust.lua |
 | Bufferline | Window Tabs | config/ui/bufferline.lua | 
 | Smart-Splits | Pane splitting utility | config/tools/smart-splits.lua |
+| xCodeBuild | iOS Development (Mac) | config/languages/ios.lua|
 
 ## Other Language Things
 
 Will need to install a LISP language server or similar if you want to use CONJURE. VALE is possible to use, but it annoyed me so I stopped.
+
+### iOS Development
+xCode Build has some dependancies that thankfully come with a fancy build script, just run: 
+`cd ~/.local/share/nvim/lazy/xcodebuild.nvim
+make install` and you should be good to go!
+
+To actually use xCodeBuild, first run `XcodebuildSetup` from the proj root dir. Then can run `:XcodebuildPicker` or `:h xcodebuild` to see some of the more useful commands.
 
 ### Common Lisp
 
