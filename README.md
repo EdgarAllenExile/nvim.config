@@ -48,6 +48,7 @@ There are quite a few dependancies that will need to be installed for proper fun
 | Bufferline | Window Tabs | config/ui/bufferline.lua | 
 | Smart-Splits | Pane splitting utility | config/tools/smart-splits.lua |
 | xCodeBuild | iOS Development (Mac) | config/languages/ios.lua|
+| Oil | Buffer Style File Tree / Manager | config/tools/-oil.lua |
 
 ## Other Language Things
 
