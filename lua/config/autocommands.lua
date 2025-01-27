@@ -13,8 +13,18 @@ vim.api.nvim_create_autocmd('User', {
 
     -- Customize window-local settings
     local config = vim.api.nvim_win_get_config(win_id)
-    config.border, config.title_pos = 'double', 'right'
+    config.border, config.title_pos = 'double', 'left'
     vim.api.nvim_win_set_config(win_id, config)
+  end,
+})
+
+vim.api.nvim_create_autocmd({ 'ColorScheme', 'VimEnter' }, {
+  group = vim.api.nvim_create_augroup('Color', {}),
+  pattern = '*',
+  callback = function()
+    vim.api.nvim_set_hl(0, 'FloatBorder', { fg = '#fcfcfa' })
+    -- vim.api.nvim_set_hl(0, "LspReferenceWrite", {fg = "#FF0000"})
+    -- vim.api.nvim_set_hl(0, "LspReferenceText", {fg = "#FF0000"})
   end,
 })
 
@@ -24,7 +34,7 @@ vim.api.nvim_create_autocmd('User', {
     local config = vim.api.nvim_win_get_config(args.data.win_id)
 
     -- Ensure fixed height
-    config.height = 20
+    config.height = 10
 
     -- Ensure title padding
     if config.title[#config.title][1] ~= ' ' then
