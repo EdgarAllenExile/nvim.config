@@ -5,3 +5,35 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank()
   end,
 })
+
+vim.api.nvim_create_autocmd('User', {
+  pattern = 'MiniFilesWindowOpen',
+  callback = function(args)
+    local win_id = args.data.win_id
+
+    -- Customize window-local settings
+    local config = vim.api.nvim_win_get_config(win_id)
+    config.border, config.title_pos = 'double', 'right'
+    vim.api.nvim_win_set_config(win_id, config)
+  end,
+})
+
+vim.api.nvim_create_autocmd('User', {
+  pattern = 'MiniFilesWindowUpdate',
+  callback = function(args)
+    local config = vim.api.nvim_win_get_config(args.data.win_id)
+
+    -- Ensure fixed height
+    config.height = 20
+
+    -- Ensure title padding
+    if config.title[#config.title][1] ~= ' ' then
+      table.insert(config.title, { ' ', 'NormalFloat' })
+    end
+    if config.title[1][1] ~= ' ' then
+      table.insert(config.title, 1, { ' ', 'NormalFloat' })
+    end
+
+    vim.api.nvim_win_set_config(args.data.win_id, config)
+  end,
+})
