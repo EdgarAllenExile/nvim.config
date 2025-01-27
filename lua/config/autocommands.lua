@@ -6,6 +6,8 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+vim.api.nvim_set_hl(0, 'WinSeparator', { fg = 'black', bold = true })
+
 vim.api.nvim_create_autocmd('User', {
   pattern = 'MiniFilesWindowOpen',
   callback = function(args)
