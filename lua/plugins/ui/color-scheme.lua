@@ -7,13 +7,13 @@ return {
     require('monokai-pro').setup {
       transparent_background = false,
       devicons = true,
-      filter = 'spectrum',
+      filter = 'pro',
       background_clear = {
         -- 'neo-tree',
         -- 'bufferline',
       },
     }
-    vim.cmd.hi 'Comment gui=none'
+    -- vim.cmd.hi 'Comment gui=none'
     vim.cmd.colorscheme 'monokai-pro'
   end,
 }
