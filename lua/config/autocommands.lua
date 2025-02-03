@@ -30,13 +30,20 @@ vim.api.nvim_create_autocmd({ 'ColorScheme', 'VimEnter' }, {
   end,
 })
 
+vim.api.nvim_create_autocmd({ 'BufEnter', 'CursorHold', 'InsertLeave' }, {
+  pattern = '*',
+  callback = function()
+    vim.lsp.codelens.refresh { bufnr = 0 }
+  end,
+})
+
 vim.api.nvim_create_autocmd('User', {
   pattern = 'MiniFilesWindowUpdate',
   callback = function(args)
     local config = vim.api.nvim_win_get_config(args.data.win_id)
 
     -- Ensure fixed height
-    config.height = 10
+    config.height = 20
 
     -- Ensure title padding
     if config.title[#config.title][1] ~= ' ' then
