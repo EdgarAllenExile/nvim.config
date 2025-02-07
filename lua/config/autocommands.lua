@@ -31,7 +31,7 @@ vim.api.nvim_create_autocmd({ 'ColorScheme', 'VimEnter' }, {
 })
 
 vim.api.nvim_create_autocmd({ 'BufEnter', 'CursorHold', 'InsertLeave' }, {
-  pattern = '*',
+  pattern = { '*.cs', '*.xaml' },
   callback = function()
     vim.lsp.codelens.refresh { bufnr = 0 }
   end,

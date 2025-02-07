@@ -47,8 +47,9 @@ There are quite a few dependancies that will need to be installed for proper fun
 | Rustacean | Rust Language Utils | config/languages/rust.lua |
 | Bufferline | Window Tabs | config/ui/bufferline.lua | 
 | Smart-Splits | Pane splitting utility | config/tools/smart-splits.lua |
-| xCodeBuild | iOS Development (Mac) | config/languages/ios.lua|
-| Oil | Buffer Style File Tree / Manager | config/tools/-oil.lua |
+| xCodeBuild | iOS Development (Mac) | config/languages/ios.lua |
+| Grapple | Mark and Find Files | config/tools/grapple.lua |
+| Roslyn | .NET Language Server | config/languages/roslyn.lua |
 
 ## Other Language Things
 
