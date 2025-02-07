@@ -26,7 +26,8 @@ return {
           dotnet_search_reference_assemblies = true,
         },
         ['csharp|background_analysis'] = {
-          dotnet_analyzer_diagnostics_scope = true,
+          dotnet_analyzer_diagnostics_scope = 'openFiles',
+          dotnet_compiler_diagnostics_scope = 'openFiles',
         },
       },
     },
