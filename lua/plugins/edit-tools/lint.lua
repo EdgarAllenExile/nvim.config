@@ -10,8 +10,8 @@ return {
         text = { 'vale' },
       }
 
-      local markdownlint = require('lint').linters.markdownlint
-      markdownlint.args = { '--disable', 'MD013', '--' }
+      -- local markdownlint = require('lint').linters.markdownlint
+      -- markdownlint.args = { '--disable', 'MD013', '--' }
 
       -- To allow other plugins to add linters to require('lint').linters_by_ft,
       -- instead set linters_by_ft like this:
