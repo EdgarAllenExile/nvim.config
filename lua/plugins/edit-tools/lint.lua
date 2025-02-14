@@ -4,14 +4,18 @@ return {
     'mfussenegger/nvim-lint',
     event = { 'BufReadPre', 'BufNewFile' },
     config = function()
+      -- local markdownlint = require('lint').linters.markdownlint
+      -- markdownlint.args = { 'MD013': 'false' }
+      -- markdownlint.args = { '--disable', 'MD013', '--' }
+
       local lint = require 'lint'
+
+      lint.linters.markdownlint.args = { '--disable', 'MD013', '--' }
+
       lint.linters_by_ft = {
         markdown = { 'markdownlint' },
         text = { 'vale' },
       }
-
-      -- local markdownlint = require('lint').linters.markdownlint
-      -- markdownlint.args = { '--disable', 'MD013', '--' }
 
       -- To allow other plugins to add linters to require('lint').linters_by_ft,
       -- instead set linters_by_ft like this:
