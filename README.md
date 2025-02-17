@@ -51,6 +51,11 @@ There are quite a few dependancies that will need to be installed for proper fun
 | Grapple | Mark and Find Files | config/tools/grapple.lua |
 | Roslyn | .NET Language Server | config/languages/roslyn.lua |
 
+
+## Mini.Everything
+
+I feel like I should probably go through everything that mini does
+
 ## Other Language Things
 
 Will need to install a LISP language server or similar if you want to use CONJURE. VALE is possible to use, but it annoyed me so I stopped.

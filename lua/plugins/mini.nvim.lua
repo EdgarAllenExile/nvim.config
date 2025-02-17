@@ -1,6 +1,7 @@
 return { -- Collection of various small independent plugins/modules
   'echasnovski/mini.nvim',
   version = false,
+  lazy = false,
   config = function()
     -- Better Around/Inside textobjects
     --
@@ -15,6 +16,9 @@ return { -- Collection of various small independent plugins/modules
     -- - saiw) - [S]urround [A]dd [I]nner [W]ord [)]Paren
     -- - sd'   - [S]urround [D]elete [']quotes
     -- - sr)'  - [S]urround [R]eplace [)] [']
+    require('mini.sessions').setup {
+      -- autoread = true,
+    }
     require('mini.starter').setup()
     require('mini.notify').setup()
     require('mini.surround').setup()
