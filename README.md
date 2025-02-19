@@ -56,6 +56,17 @@ There are quite a few dependancies that will need to be installed for proper fun
 
 I feel like I should probably go through everything that mini does
 
+As a start, I use the following:
+
+- Mini.Ai,
+- Mini.Sessions,
+- Mini.Starter,
+- Mini.Notify,
+- Mini.Sorround,
+- Mini.Icons,
+- Mini.Files, and
+- Mini.StatusLine.
+
 ## Other Language Things
 
 Will need to install a LISP language server or similar if you want to use CONJURE. VALE is possible to use, but it annoyed me so I stopped.
