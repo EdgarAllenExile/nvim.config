@@ -1,6 +1,6 @@
 return {
   'seblj/roslyn.nvim',
-  ft = { 'cs', 'xaml' },
+  ft = { 'cs', 'xaml', 'xml' },
   opts = {
     config = {
       settings = {
