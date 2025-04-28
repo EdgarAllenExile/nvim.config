@@ -99,3 +99,10 @@ I would like to work out the best way to properly integrate nvim into VSc
 I think that the best way to do this is to either use an alternative `init.lua` or to use the fancy nvim is vscode conditions?
 
 `You can also use exists('g:vscode') in your init.vim (or vim.g.vscode in init.lua) to check if Nvim is running in vscode.`
+
+### VSCode and nvim
+
+Things I would like to either include or change:
+
+- whilst in nvim, bind `\` to open solution explorer, or think of a better way to make that work
+- make sure the lsp that I want is working the way I want it to
