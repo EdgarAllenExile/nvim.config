@@ -91,3 +91,7 @@ To get started and use common lisp with clojure, we need to also install Roswell
 Then you can CD into the project folder in a different terminal, start up a swank server to get things rolling on port 4005. Command to start the server is:
 
 `ros run --eval '(ql:quickload :swank)'  --eval '(swank:create-server :dont-close t)'`
+
+## To Do or Improve
+
+I would like to work out the best way to properly integrate nvim into VSc
