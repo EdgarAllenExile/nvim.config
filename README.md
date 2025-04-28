@@ -95,3 +95,7 @@ Then you can CD into the project folder in a different terminal, start up a swan
 ## To Do or Improve
 
 I would like to work out the best way to properly integrate nvim into VSc
+
+I think that the best way to do this is to either use an alternative `init.lua` or to use the fancy nvim is vscode conditions?
+
+`You can also use exists('g:vscode') in your init.vim (or vim.g.vscode in init.lua) to check if Nvim is running in vscode.`
