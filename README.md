@@ -50,6 +50,8 @@ There are quite a few dependancies that will need to be installed for proper fun
 | xCodeBuild | iOS Development (Mac) | config/languages/ios.lua |
 | Grapple | Mark and Find Files | config/tools/grapple.lua |
 | Roslyn | .NET Language Server | config/languages/roslyn.lua |
+| Typescript-Tools | Typescript integration and stuff | config/typescript.lua |
+| Nvim-EsLint | FasterESLInt | config/typescript.lua |
 
 
 ## Mini.Everything

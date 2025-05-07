@@ -4,6 +4,7 @@ return {
   dependencies = {
     -- Automatically install LSPs and related tools to stdpath for Neovim
     { 'williamboman/mason.nvim', config = true }, -- NOTE: Must be loaded before dependants
+    'mason-org/mason-registry',
     'williamboman/mason-lspconfig.nvim',
     'WhoIsSethDaniel/mason-tool-installer.nvim',
     { 'antosha417/nvim-lsp-file-operations', config = true },
@@ -195,6 +196,7 @@ return {
     vim.list_extend(ensure_installed, {
       'stylua', -- Used to format Lua code
       'markdownlint', -- MD Obs:
+      'tsserver',
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
