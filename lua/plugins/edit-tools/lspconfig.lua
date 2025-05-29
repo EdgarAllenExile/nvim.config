@@ -125,6 +125,7 @@ return {
     --  - capabilities (table): Override fields in capabilities. Can be used to disable certain LSP features.
     --  - settings (table): Override the default settings passed when initializing the server.
     --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
+    local capabilities = require('blink.cmp').get_lsp_capabilities()
     local servers = {
       -- clangd = {},
       -- gopls = {},
@@ -168,11 +169,12 @@ return {
     vim.list_extend(ensure_installed, {
       'stylua', -- Used to format Lua code
       'markdownlint', -- MD Obs:
-      -- 'tsserver',
+      'ts_ls',
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
     require('mason-lspconfig').setup {
+      automatic_enable = true,
       ensure_installed = {}, -- explicitly set to an empty table (Kickstart populates installs via mason-tool-installer)
       automatic_installation = false,
       handlers = {
