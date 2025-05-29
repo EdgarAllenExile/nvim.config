@@ -1,6 +1,6 @@
 return { -- Autoformat
   'stevearc/conform.nvim',
-  dependancies = { 'mason.nvim' },
+  dependancies = { 'mason-org/mason.nvim' },
   lazy = true,
   event = { 'BufWritePre' },
   cmd = { 'ConformInfo' },
