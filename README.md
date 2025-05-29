@@ -26,14 +26,16 @@ There are quite a few dependancies that will need to be installed for proper fun
 | Conform | Auto-Formatter | config/edit-tools/conform.lua|
 | Dap | Debugging | config/edit-tools/dap.lua |
 | GitSigns | Git Update Indicators | config/ui/gitsigns.lua |
-| Indent_line | Line indentations | config/automagic/indent_line.lua |
+| Indent_line | Line indentations | config/automagic/indents.lua |
+| Guess-Line | Autoconfigured | config/automagic/indents.lua |
 | LazyDev | Per workspace plugin loading | config/edit-tools/lazydev.lua |
 | Lint | Configure Linters | config/edit-tools/lint.lua |
 | LspConfig | Set up LSPs | config/edit-tools/lspconfig.lua |
+| Mason | Automagic LSP Config | config/edit-tools/lspconfig.lua
 | Luvit | ?? | config/luvit-meta.lua |
 | Mini.Nvim | Collection of small plugins | config/mini.nvim.lua |
 | NeoTree | Tree Plugin | config/tools/neo-tree.lua |
-| NvimCmp | Auto-Complete | config/automagic/nvim-cmp.lua |
+| Blink.cmp | Auto-Complete | config/automagic/nvim-cmp.lua |
 | WindowPicker | Chose windows from tree | config/tools/nvim-window-picker.lua |
 | Render-Markdown | .md renderer | config/ui/render-markdown.lua |
 | Sonokai | Colourscheme | config/ui/sonokai.lua |
