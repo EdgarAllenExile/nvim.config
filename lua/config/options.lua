@@ -1,40 +1,42 @@
-vim.opt.number = true
-vim.opt.relativenumber = true
+vim.o.number = true
+vim.o.relativenumber = true
 
-vim.opt.mouse = 'a'
-vim.opt.showmode = false
+vim.o.mouse = 'a'
+vim.o.showmode = false
 
 vim.schedule(function()
-  vim.opt.clipboard = 'unnamedplus'
+  vim.o.clipboard = 'unnamedplus'
 end)
 
-vim.opt.linebreak = true
-vim.opt.breakindent = true
+vim.o.linebreak = true
+vim.o.breakindent = true
 
-vim.opt.undofile = true
+vim.o.undofile = true
 
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
+vim.o.ignorecase = true
+vim.o.smartcase = true
 
-vim.opt.signcolumn = 'yes'
+vim.o.signcolumn = 'yes'
 
-vim.opt.updatetime = 250
+vim.o.updatetime = 250
 
-vim.opt.timeoutlen = 300
+vim.o.timeoutlen = 300
 
-vim.opt.splitright = true
-vim.opt.splitbelow = true
+vim.o.splitright = true
+vim.o.splitbelow = true
 
-vim.opt.list = true
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+vim.o.list = true
+vim.o.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
-vim.opt.inccommand = 'split'
+vim.o.inccommand = 'split'
 
-vim.opt.cursorline = true
+vim.o.cursorline = true
 
-vim.opt.scrolloff = 10
+vim.o.scrolloff = 10
 
-vim.opt.termguicolors = true
+vim.o.termguicolors = true
+
+vim.o.confirm = true
 
 vim.lsp.inlay_hint.enable()
 
