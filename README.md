@@ -110,3 +110,5 @@ Things I would like to either include or change:
 
 - whilst in nvim, bind `\` to open solution explorer, or think of a better way to make that work
 - make sure the lsp that I want is working the way I want it to
+
+I was actually about to do this. 
