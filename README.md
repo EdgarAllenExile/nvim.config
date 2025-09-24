@@ -31,7 +31,7 @@ There are quite a few dependancies that will need to be installed for proper fun
 | LazyDev | Per workspace plugin loading | config/edit-tools/lazydev.lua |
 | Lint | Configure Linters | config/edit-tools/lint.lua |
 | LspConfig | Set up LSPs | config/edit-tools/lspconfig.lua |
-| Mason | Automagic LSP Config | config/edit-tools/lspconfig.lua
+| Mason | Automagic LSP Config | config/edit-tools/lspconfig.lua |
 | Luvit | ?? | config/luvit-meta.lua |
 | Mini.Nvim | Collection of small plugins | config/mini.nvim.lua |
 | NeoTree | Tree Plugin | config/tools/neo-tree.lua |
