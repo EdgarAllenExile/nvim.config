@@ -31,16 +31,18 @@ vim.o.list = true
 vim.o.inccommand = 'split'
 
 vim.o.cursorline = true
-
+vim.o.cursorlineopt = 'number'
 vim.o.scrolloff = 10
 
 vim.o.termguicolors = true
 
 vim.o.confirm = true
 
-vim.o.tabstop = 4
-vim.o.shiftwidth = 4
 vim.o.expandtab = true
+vim.o.smartindent = true
+vim.o.tabstop = 4
+vim.o.softtabstop = 4
+vim.o.shiftwidth = 4
 
 vim.lsp.inlay_hint.enable()
 
