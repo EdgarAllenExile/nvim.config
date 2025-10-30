@@ -31,7 +31,7 @@ vim.o.list = true
 vim.o.inccommand = 'split'
 
 vim.o.cursorline = true
-vim.o.cursorlineopt = 'number'
+-- vim.o.cursorlineopt = 'number'
 vim.o.scrolloff = 10
 
 vim.o.termguicolors = true
