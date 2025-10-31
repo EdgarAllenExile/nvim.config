@@ -1,5 +1,9 @@
 # nvim.config
 
+## Thoughts on Config
+
+I do really like the NvChad UI set up and think I should probably get away from some of the more annoying parts of lazy
+
 ## Setup
 
 Installation Steps
