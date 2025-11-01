@@ -4,6 +4,7 @@ vim.pack.add {
 
 -- Text editing
 require('mini.ai').setup { n_lines = 500 }
+require('mini.pairs').setup()
 require('mini.surround').setup()
 
 -- General workflow
@@ -11,34 +12,26 @@ require('mini.clue').setup()
 require('mini.diff').setup()
 require('mini.extra').setup()
 require('mini.files').setup {
+  windows = { preview = true },
   content = {
     -- Predicate for which file system entries to show
     filter = function(fs_entry)
       return not vim.startswith(fs_entry.name, '.')
     end,
-    -- What prefix to show to the left of file system entry
     prefix = nil,
-    -- In which order to show file system entries
     sort = nil,
   },
 }
 
-require('mini.git').setup()
-
+  -- Make new window and set it as target
 local map_split = function(buf_id, lhs, direction)
   local rhs = function()
-    -- Make new window and set it as target
     local cur_target = MiniFiles.get_explorer_state().target_window
     local new_target = vim.api.nvim_win_call(cur_target, function()
       vim.cmd(direction .. ' split')
       return vim.api.nvim_get_current_win()
     end)
-
     MiniFiles.set_target_window(new_target)
-
-    -- This intentionally doesn't act on file under cursor in favor of
-    -- explicit "go in" action (`l` / `L`). To immediately open file,
-    -- add appropriate `MiniFiles.go_in()` call instead of this comment.
   end
 
   -- Adding `desc` will result into `show_help` entries
@@ -50,13 +43,12 @@ vim.api.nvim_create_autocmd('User', {
   pattern = 'MiniFilesBufferCreate',
   callback = function(args)
     local buf_id = args.data.buf_id
-    -- Tweak keys to your liking
     map_split(buf_id, '<C-S>', 'belowright horizontal')
     map_split(buf_id, '<C-s>', 'belowright vertical')
   end,
 })
 
--- Auto Command to Show / Hide Dot Files
+  -- Auto Command to Show / Hide Dot Files
 local show_dotfiles = false
 
 local filter_show = function()
@@ -77,7 +69,6 @@ vim.api.nvim_create_autocmd('User', {
   pattern = 'MiniFilesBufferCreate',
   callback = function(args)
     local buf_id = args.data.buf_id
-    -- Tweak left-hand side of mapping to your liking
     vim.keymap.set('n', 'g.', toggle_dotfiles, { buffer = buf_id, desc = 'Toggle DotFiles' })
   end,
 })
@@ -89,12 +80,15 @@ vim.keymap.set('n', '\\', function()
     MiniFiles.reveal_cwd()
   end, 30)
 end, { desc = 'Toggle MiniFiles in CWD' })
--- require('mini.comment').setup()
+
+
+require('mini.git').setup()
+
+
 -- Simple and easy statusline.
 --  You could remove this setup call if you don't like it,
 --  and try some other statusline plugin
 local statusline = require 'mini.statusline'
--- set use_icons to true if you have a Nerd Font
 statusline.setup { use_icons = vim.g.have_nerd_font }
 
 -- You can configure sections in the statusline by overriding their

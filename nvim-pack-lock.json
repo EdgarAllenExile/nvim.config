@@ -1,5 +1,18 @@
 {
   "plugins": {
+    "LuaSnip": {
+      "rev": "ccf25a5",
+      "src": "https://github.com/L3MON4D3/LuaSnip"
+    },
+    "blink.cmp": {
+      "rev": "2408f14",
+      "src": "https://github.com/Saghen/blink.cmp",
+      "version": "'1.*'"
+    },
+    "friendly-snippets": {
+      "rev": "572f566",
+      "src": "https://github.com/rafamadriz/friendly-snippets"
+    },
     "mini.nvim": {
       "rev": "e96ef33",
       "src": "https://github.com/nvim-mini/mini.nvim"
@@ -11,6 +24,10 @@
     "plenary.nvim": {
       "rev": "b9fd522",
       "src": "https://github.com/nvim-lua/plenary.nvim"
+    },
+    "smart-splits.nvim": {
+      "rev": "1611946",
+      "src": "https://github.com/mrjones2014/smart-splits.nvim"
     },
     "telescope-fzf-native.nvim": {
       "rev": "1f08ed6",

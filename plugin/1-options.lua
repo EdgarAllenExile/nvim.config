@@ -4,6 +4,10 @@
 vim.g.mapleader = ' ' -- You know what this does
 vim.g.have_nerd_font = true
 
+vim.schedule(function()
+  vim.o.clipboard = 'unnamedplus'
+end)
+
 -- User Interface Config
 vim.o.breakindent = true -- No wrapped line overhand
 vim.o.breakindentopt = 'list:-1' -- Add list padding
