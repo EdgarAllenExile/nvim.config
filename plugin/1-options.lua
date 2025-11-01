@@ -20,6 +20,7 @@ vim.o.splitkeep = 'screen' -- Reduce screen scroll when split
 vim.o.splitright = true -- Vertical splits spawn right
 vim.o.winborder = 'single' -- Use single border
 -- vim.o.wrap		= false		-- No Wrap 		****Test***
+vim.o.scrolloff = 20 -- Keeps cursor XX lines above / below end of screen
 
 -- Editor Config
 vim.o.autoindent = true -- Enable
@@ -33,6 +34,7 @@ vim.o.smartcase = true -- Case sensitive if appropriate
 vim.o.smartindent = true -- Not actually sure what this done ngl
 vim.o.spelloptions = 'camel' -- Treat camelCase word parts as separate words
 vim.o.tabstop = 2 -- Tabs are two spaces
+vim.o.softtabstop = 2 -- Does not actually insert tabs?
 -- vim.o.virtualedit = 'block' -- Allow going past end of line in blockwise mode
 
 -- vim.o.iskeyword = '@,48-57,_,192-255,-' -- Treat dash as `word` textobject part
@@ -41,6 +43,9 @@ vim.o.tabstop = 2 -- Tabs are two spaces
 -- "Start of list item is: at least one special character (digit, -, +, *)
 -- possibly followed by punctuation (. or `)`) followed by at least one space".
 -- vim.o.formatlistpat = [[^\s*[0-9\-\+\*]\+[\.\)]*\s\+]]
+
+-- Misc Config
+vim.o.confirm = true -- Requires confirmation if quitting without saving
 
 -- Diagnostics Config
 vim.diagnostic.config {
