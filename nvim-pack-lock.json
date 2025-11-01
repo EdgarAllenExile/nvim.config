@@ -3,6 +3,26 @@
     "mini.nvim": {
       "rev": "e96ef33",
       "src": "https://github.com/nvim-mini/mini.nvim"
+    },
+    "monokai-pro.nvim": {
+      "rev": "1ac671f",
+      "src": "https://github.com/loctvl842/monokai-pro.nvim"
+    },
+    "plenary.nvim": {
+      "rev": "b9fd522",
+      "src": "https://github.com/nvim-lua/plenary.nvim"
+    },
+    "telescope-fzf-native.nvim": {
+      "rev": "1f08ed6",
+      "src": "https://github.com/nvim-telescope/telescope-fzf-native.nvim"
+    },
+    "telescope-ui-select.nvim": {
+      "rev": "6e51d7d",
+      "src": "https://github.com/nvim-telescope/telescope-ui-select.nvim"
+    },
+    "telescope.nvim": {
+      "rev": "b4da76b",
+      "src": "https://github.com/nvim-telescope/telescope.nvim"
     }
   }
 }

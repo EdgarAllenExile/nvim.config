@@ -114,6 +114,7 @@ statusline.setup { use_icons = vim.g.have_nerd_font }
 -- end,
 
 -- Appearance
+require('mini.colors').setup()
 require('mini.icons').setup()
 require('mini.notify').setup()
 require('mini.starter').setup()
