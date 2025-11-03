@@ -21,6 +21,24 @@
       "rev": "1ac671f",
       "src": "https://github.com/loctvl842/monokai-pro.nvim"
     },
+    "nvim-lspconfig": {
+      "rev": "a89bfcf",
+      "src": "https://github.com/neovim/nvim-lspconfig"
+    },
+    "nvim-treesitter": {
+      "rev": "42fc28ba",
+      "src": "https://github.com/nvim-treesitter/nvim-treesitter",
+      "version": "'main'"
+    },
+    "nvim-treesitter-context": {
+      "src": "https://github.com/nvim-treesitter/nvim-treesitter-context",
+      "version": "'main'"
+    },
+    "nvim-treesitter-textobjects": {
+      "rev": "2e5b873",
+      "src": "https://github.com/nvim-treesitter/nvim-treesitter-textobjects",
+      "version": "'main'"
+    },
     "plenary.nvim": {
       "rev": "b9fd522",
       "src": "https://github.com/nvim-lua/plenary.nvim"
