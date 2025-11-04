@@ -1,8 +1,21 @@
-# Nvim.Config2
+# Nvim.Config
 
-## Intensions For Rewrite
+## To Do
 
-My intentions for this rewrite is to cut out a lot of the Lazy.nvim and Kickstart related configuration. I may opt to ultimately return to the same feature set, but I am hoping that by adding this manually myself, I learn to understand how it works better. 
+### Things to Add:
+
+- Markdown ftplugin
+- Vale / .md lsp / formatter / linter
+
+### Things to Change:
+
+Bulk install required plugins
+
+### Things to Investigate:
+
+- Mise En Place CLI Util
+- That Nvim Tips plugin
+- How good is Clue for actual vim commands
 
 ## Design Goals
 
