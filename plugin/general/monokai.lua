@@ -5,11 +5,10 @@ vim.pack.add {
 
 require('monokai-pro').setup {
   filter = 'pro',
-  -- background_clear = { 'float_win' },
-  --
   override = function()
     return {
-      FloatBorder = { fg = '#fcfcfa' },
+      FloatBorder = { fg = '#939293', bg = '#2d2a2e' }, -- This is TelescopeBorder highlight group
+      MiniTablineFill = { fg = '#fcfcfa' },
     }
   end,
 }

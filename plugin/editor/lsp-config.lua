@@ -1,6 +1,18 @@
-vim.pack.add{
+vim.pack.add {
   { src = 'https://github.com/neovim/nvim-lspconfig' },
+  { src = 'https://github.com/j-hui/fidget.nvim' },
+}
+-- See https://github.com/neovim/nvim-lspconfig
+vim.lsp.enable {
+  'lua_ls',
 }
 
--- See https://github.com/neovim/nvim-lspconfig
-require('nvim-lspconfig').setup()
+vim.lsp.config('*', {
+  capabilities = {
+    textDocument = {
+      semanticTokens = {
+        multilineTokenSupport = true,
+      },
+    },
+  },
+})

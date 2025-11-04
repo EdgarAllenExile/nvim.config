@@ -24,3 +24,11 @@ This could be in several places:
 
 ### Dependancies
 
+### LSPs, Formatters, Linters
+
+| Name | Lang | Type | Command
+| -------------- | -------------- | --------------- | --------------- |
+| lua-language-server | lua | LSP | `brew install lua-language-server` |
+| StyleLua | lua | Formatter | `brew install stylelua` |
+| LuaChecks | lua | Linter | `sudo luarocks install luacheck` |
+

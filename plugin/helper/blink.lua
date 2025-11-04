@@ -1,8 +1,8 @@
 vim.pack.add {
-  { src = 'https://github.com/Saghen/blink.cmp', version = '1.*' },
-}
-
-vim.pack.add {
+  {
+    src = 'https://github.com/Saghen/blink.cmp',
+    version = vim.version.range '1.*',
+  },
   'https://github.com/rafamadriz/friendly-snippets',
   'https://github.com/L3MON4D3/LuaSnip',
 }

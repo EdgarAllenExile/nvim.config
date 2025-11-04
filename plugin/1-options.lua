@@ -3,10 +3,17 @@
 -- Essential Config
 vim.g.mapleader = ' ' -- You know what this does
 vim.g.have_nerd_font = true
+vim.o.switchbuf = 'usetab' -- Prefer switching between open buffers
+vim.o.undofile = true
 
 vim.schedule(function()
   vim.o.clipboard = 'unnamedplus'
 end)
+
+vim.cmd 'filetype plugin indent on'
+if vim.fn.exists 'syntax_on' ~= 1 then
+  vim.cmd 'syntax enable'
+end
 
 -- User Interface Config
 vim.o.breakindent = true -- No wrapped line overhand
