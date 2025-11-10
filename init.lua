@@ -19,26 +19,15 @@ vim.pack.add {
   { src = 'https://github.com/nvim-lua/plenary.nvim' },
   { src = 'https://github.com/nvim-telescope/telescope.nvim' },
   { src = 'https://github.com/loctvl842/monokai-pro.nvim' },
-  { src = 'https://github.com/OXY2DEV/markview.nvim' },
+  -- { src = 'https://github.com/OXY2DEV/markview.nvim' },
 }
 -- Insert ColourScheme Here
--- vim.pack.add {
---   'https://github.com/loctvl842/monokai-pro.nvim',
--- }
---
--- require('monokai-pro').setup {
---   filter = 'pro',
---   transparent_background = false,
---   terminal_colors = true,
---   override = function()
---     return {
---       floatborder = { fg = '#939293', bg = '#2d2a2e' }, -- this is telescopeborder highlight group
---       minitablinefill = { fg = '#fcfcfa' },
---     }
---   end,
--- }
---
--- vim.cmd.colorscheme 'monokai-pro'
+vim.pack.add {
+  { src = 'https://github.com/OXY2DEV/markview.nvim' },
+  { src = 'https://github.com/catppuccin/nvim' },
+  { src = 'https://github.com/sainnhe/sonokai' },
+}
+-- vim.pack.add {https://github.com/catppuccin/nvi
 -- -- vim.cmd.colorscheme 'evening'
 --
 -- vim.pack.add {

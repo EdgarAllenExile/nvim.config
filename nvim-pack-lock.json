@@ -45,6 +45,10 @@
       "rev": "de74099",
       "src": "https://github.com/MunifTanjim/nui.nvim"
     },
+    "nvim": {
+      "rev": "234fc04",
+      "src": "https://github.com/catppuccin/nvim"
+    },
     "nvim-dap": {
       "rev": "e97dc47",
       "src": "https://github.com/mfussenegger/nvim-dap"
@@ -87,6 +91,10 @@
     "smart-splits.nvim": {
       "rev": "1611946",
       "src": "https://github.com/mrjones2014/smart-splits.nvim"
+    },
+    "sonokai": {
+      "rev": "ec07018",
+      "src": "https://github.com/sainnhe/sonokai"
     },
     "telescope-fzf-native.nvim": {
       "rev": "1f08ed6",
