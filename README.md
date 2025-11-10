@@ -10,6 +10,7 @@
 ### Things to Change:
 
 Bulk install required plugins
+- Markview is not working correctly, might need to look at which order they are being added
 
 ### Things to Investigate:
 

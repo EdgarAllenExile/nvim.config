@@ -20,13 +20,11 @@ require('nvim-treesitter.configs').setup {
     'json',
     'lua',
     'markdown',
-    -- "markdown-inline",
     'rust',
     'sql',
     'toml',
     'vim',
     'yaml',
-    -- 'zig',
   },
   highlight = {
     enable = true,
@@ -35,6 +33,3 @@ require('nvim-treesitter.configs').setup {
   ignore_install = {},
   modules = {},
 }
-
--- treesitter.install(ts_parsers)
--- autocmd('PackChanged', { callback = function() treesitter.update() end })

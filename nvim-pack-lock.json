@@ -25,6 +25,10 @@
       "rev": "1f08ed6",
       "src": "https://github.com/nvim-telescope/telescope-fzf-native.nvim"
     },
+    "markview.nvim": {
+      "rev": "b41c643",
+      "src": "https://github.com/OXY2DEV/markview.nvim"
+    },
     "mini.nvim": {
       "rev": "e96ef33",
       "src": "https://github.com/nvim-mini/mini.nvim"
@@ -32,6 +36,18 @@
     "monokai-pro.nvim": {
       "rev": "1ac671f",
       "src": "https://github.com/loctvl842/monokai-pro.nvim"
+    },
+    "neovim-tips": {
+      "rev": "1408d66",
+      "src": "https://github.com/saxon1964/neovim-tips"
+    },
+    "nui.nvim": {
+      "rev": "de74099",
+      "src": "https://github.com/MunifTanjim/nui.nvim"
+    },
+    "nvim-dap": {
+      "rev": "e97dc47",
+      "src": "https://github.com/mfussenegger/nvim-dap"
     },
     "nvim-lint": {
       "rev": "8c694e1",
@@ -58,6 +74,10 @@
     "plenary.nvim": {
       "rev": "b9fd522",
       "src": "https://github.com/nvim-lua/plenary.nvim"
+    },
+    "render-markdown.nvim": {
+      "rev": "a1b2bf0",
+      "src": "https://github.com/MeanderingProgrammer/render-markdown.nvim"
     },
     "rustaceanvim": {
       "rev": "88575b9",

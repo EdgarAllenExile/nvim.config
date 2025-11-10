@@ -5,6 +5,7 @@ vim.pack.add {
 
 require('monokai-pro').setup {
   filter = 'pro',
+  plugins = {},
   override = function()
     return {
       FloatBorder = { fg = '#939293', bg = '#2d2a2e' }, -- This is TelescopeBorder highlight group
