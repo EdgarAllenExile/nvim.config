@@ -75,6 +75,10 @@
       "src": "https://github.com/nvim-treesitter/nvim-treesitter-textobjects",
       "version": "'main'"
     },
+    "onedarkpro.nvim": {
+      "rev": "eeac884",
+      "src": "https://github.com/olimorris/onedarkpro.nvim"
+    },
     "plenary.nvim": {
       "rev": "b9fd522",
       "src": "https://github.com/nvim-lua/plenary.nvim"
