@@ -10,10 +10,10 @@ require('monokai-pro').setup {
     return {
       FloatBorder = { fg = '#939293', bg = '#2d2a2e' }, -- This is TelescopeBorder highlight group
       MiniTablineFill = { fg = '#fcfcfa' },
-      MarkviewPalette1 = { fg = '#ff6188' },
-      MarkviewPalette2 = { fg = '#ab9df2' },
-      MarkviewPalette3 = { fg = '#78dce8' },
-      MarkviewPalette4 = { fg = '#a9dc76' },
+      -- MarkviewPalette1 = { fg = '#ff6188' },
+      -- MarkviewPalette2 = { fg = '#ab9df2' },
+      -- MarkviewPalette3 = { fg = '#78dce8' },
+      -- MarkviewPalette4 = { fg = '#a9dc76' },
     }
   end,
 }
@@ -26,7 +26,13 @@ require('catppuccin').setup {
     },
   },
 }
+
+-- require('sonokai').setup {
+--   sonokai_style = 'atlantis',
+-- }
+
 vim.cmd.colorscheme 'monokai-pro'
+-- vim.cmd.colorscheme 'sonokai'
 
 local monokaipro = {
   black = '#19181a',

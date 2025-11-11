@@ -25,6 +25,10 @@
       "rev": "1f08ed6",
       "src": "https://github.com/nvim-telescope/telescope-fzf-native.nvim"
     },
+    "kanagawa.nvim": {
+      "rev": "aef7f5c",
+      "src": "https://github.com/rebelot/kanagawa.nvim"
+    },
     "markview.nvim": {
       "rev": "b41c643",
       "src": "https://github.com/OXY2DEV/markview.nvim"

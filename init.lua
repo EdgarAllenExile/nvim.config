@@ -18,15 +18,17 @@ end
 vim.pack.add {
   { src = 'https://github.com/nvim-lua/plenary.nvim' },
   { src = 'https://github.com/nvim-telescope/telescope.nvim' },
-  { src = 'https://github.com/loctvl842/monokai-pro.nvim' },
   -- { src = 'https://github.com/OXY2DEV/markview.nvim' },
 }
 -- Insert ColourScheme Here
 vim.pack.add {
   { src = 'https://github.com/OXY2DEV/markview.nvim' },
+  { src = 'https://github.com/loctvl842/monokai-pro.nvim' },
   { src = 'https://github.com/catppuccin/nvim' },
   { src = 'https://github.com/sainnhe/sonokai' },
+  { src = 'https://github.com/rebelot/kanagawa.nvim' },
 }
+
 -- vim.pack.add {https://github.com/catppuccin/nvi
 -- -- vim.cmd.colorscheme 'evening'
 --
