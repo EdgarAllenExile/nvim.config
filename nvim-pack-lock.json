@@ -61,6 +61,10 @@
       "rev": "e97dc47",
       "src": "https://github.com/mfussenegger/nvim-dap"
     },
+    "nvim-dap-ui": {
+      "rev": "cf91d5e",
+      "src": "https://github.com/rcarriga/nvim-dap-ui"
+    },
     "nvim-lint": {
       "rev": "8c694e1",
       "src": "https://github.com/mfussenegger/nvim-lint"
@@ -68,6 +72,10 @@
     "nvim-lspconfig": {
       "rev": "a89bfcf",
       "src": "https://github.com/neovim/nvim-lspconfig"
+    },
+    "nvim-nio": {
+      "rev": "21f5324",
+      "src": "https://github.com/nvim-neotest/nvim-nio"
     },
     "nvim-treesitter": {
       "rev": "42fc28ba",
