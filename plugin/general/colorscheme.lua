@@ -3,6 +3,16 @@
 --   'https://github.com/loctvl842/monokai-pro.nvim',
 -- }
 
+require('monokai-v2').setup {
+  -- Treesitter settings
+  treesitter = {
+    italic = true,
+  },
+
+  -- Filter selection (default: classic for dark, light for light background)
+  filter = 'pro', -- classic | light | machine | octagon | pro | ristretto | spectrum
+}
+
 require('monokai-pro').setup {
   filter = 'pro',
   plugins = {},
@@ -31,8 +41,33 @@ require('catppuccin').setup {
 --   sonokai_style = 'atlantis',
 -- }
 
+-- require('sonokai').setup{
+--  let g:sonokai_style = 'maia'
+--  let g:sonokai_better_performance = 1
+-- }
+
 vim.cmd.colorscheme 'monokai-pro'
 -- vim.cmd.colorscheme 'sonokai'
+
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'markdown',
+  callback = function()
+    vim.cmd.colorscheme 'sonokai'
+  end,
+})
+
+-- Optional: Autocommand to return to default colorscheme when leaving specific filetypes
+-- This is useful if you have a default colorscheme and only want specific ones for certain filetypes.
+vim.api.nvim_create_autocmd('BufLeave', {
+  pattern = { '*.md' }, -- Adjust patterns as needed
+  callback = function()
+    -- Only set back to default if the new buffer is not one of the special filetypes
+    -- This prevents flickering if you switch between two special filetypes
+    if vim.bo.filetype ~= 'markdown' then
+      vim.cmd.colorscheme 'monokai-pro'
+    end
+  end,
+})
 
 local monokaipro = {
   black = '#19181a',

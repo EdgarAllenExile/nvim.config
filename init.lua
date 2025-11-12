@@ -27,6 +27,7 @@ vim.pack.add {
   { src = 'https://github.com/catppuccin/nvim' },
   { src = 'https://github.com/sainnhe/sonokai' },
   { src = 'https://github.com/rebelot/kanagawa.nvim' },
+  { src = 'https://github.com/khoido2003/monokai-v2.nvim' },
 }
 
 -- vim.pack.add {https://github.com/catppuccin/nvi
