@@ -99,6 +99,10 @@
       "rev": "b9fd522",
       "src": "https://github.com/nvim-lua/plenary.nvim"
     },
+    "precognition.nvim": {
+      "rev": "2aae268",
+      "src": "https://github.com/tris203/precognition.nvim"
+    },
     "render-markdown.nvim": {
       "rev": "a1b2bf0",
       "src": "https://github.com/MeanderingProgrammer/render-markdown.nvim"
