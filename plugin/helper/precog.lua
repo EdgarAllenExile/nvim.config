@@ -4,3 +4,10 @@ vim.pack.add {
 
 require('precognition').setup()
 require('precognition').toggle()
+
+vim.api.nvim_create_autocmd('ModeChanged', {
+  pattern = '*:[vV\\x16]',
+  callback = function()
+    require('precognition').peek()
+  end,
+})

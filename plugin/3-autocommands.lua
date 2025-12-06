@@ -39,22 +39,22 @@ vim.api.nvim_create_autocmd({ 'BufWritePost' }, {
   end,
 })
 
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = 'markdown',
-  callback = function()
-    vim.cmd.colorscheme 'catppuccin'
-  end,
-})
+-- vim.api.nvim_create_autocmd('FileType', {
+--   pattern = 'markdown',
+--   callback = function()
+--     vim.cmd.colorscheme 'catppuccin'
+--   end,
+-- })
 
 -- Optional: Autocommand to return to default colorscheme when leaving specific filetypes
 -- This is useful if you have a default colorscheme and only want specific ones for certain filetypes.
-vim.api.nvim_create_autocmd('BufLeave', {
-  pattern = { '*.md' }, -- Adjust patterns as needed
-  callback = function()
-    -- Only set back to default if the new buffer is not one of the special filetypes
-    -- This prevents flickering if you switch between two special filetypes
-    if vim.bo.filetype ~= 'markdown' then
-      vim.cmd.colorscheme 'monokai-pro'
-    end
-  end,
-})
+-- vim.api.nvim_create_autocmd('BufLeave', {
+--   pattern = { '*.md' }, -- Adjust patterns as needed
+--   callback = function()
+--     -- Only set back to default if the new buffer is not one of the special filetypes
+--     -- This prevents flickering if you switch between two special filetypes
+--     if vim.bo.filetype ~= 'markdown' then
+--       vim.cmd.colorscheme 'monokai-pro'
+--     end
+--   end,
+-- })
