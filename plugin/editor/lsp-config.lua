@@ -4,6 +4,7 @@ vim.pack.add {
 }
 -- See https://github.com/neovim/nvim-lspconfig
 vim.lsp.enable {
+  'clangd',
   'lua_ls',
 }
 
