@@ -3,6 +3,6 @@ vim.pack.add {
 }
 
 require('lint').linters_by_ft = {
-  markdown = { 'vale' },
+  -- markdown = { 'vale' },
   lua = { 'luacheck' },
 }
