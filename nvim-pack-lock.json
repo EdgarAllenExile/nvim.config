@@ -29,10 +29,6 @@
       "rev": "aef7f5c",
       "src": "https://github.com/rebelot/kanagawa.nvim"
     },
-    "markview.nvim": {
-      "rev": "b41c643",
-      "src": "https://github.com/OXY2DEV/markview.nvim"
-    },
     "mini.nvim": {
       "rev": "e96ef33",
       "src": "https://github.com/nvim-mini/mini.nvim"

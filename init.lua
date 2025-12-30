@@ -22,7 +22,8 @@ vim.pack.add {
 }
 -- Insert ColourScheme Here
 vim.pack.add {
-  { src = 'https://github.com/OXY2DEV/markview.nvim' },
+  -- { src = 'https://github.com/OXY2DEV/markview.nvim' },
+  { src = 'https://github.com/MeanderingProgrammer/render-markdown.nvim' },
   { src = 'https://github.com/loctvl842/monokai-pro.nvim' },
   { src = 'https://github.com/catppuccin/nvim' },
   { src = 'https://github.com/sainnhe/sonokai' },
