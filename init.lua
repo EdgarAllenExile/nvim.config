@@ -18,34 +18,11 @@ end
 vim.pack.add {
   { src = 'https://github.com/nvim-lua/plenary.nvim' },
   { src = 'https://github.com/nvim-telescope/telescope.nvim' },
-  -- { src = 'https://github.com/OXY2DEV/markview.nvim' },
 }
--- Insert ColourScheme Here
+
+-- Colour scheme and plugins that want to be added early
 vim.pack.add {
-  -- { src = 'https://github.com/OXY2DEV/markview.nvim' },
   { src = 'https://github.com/MeanderingProgrammer/render-markdown.nvim' },
   { src = 'https://github.com/loctvl842/monokai-pro.nvim' },
   { src = 'https://github.com/catppuccin/nvim' },
-  { src = 'https://github.com/sainnhe/sonokai' },
-  { src = 'https://github.com/rebelot/kanagawa.nvim' },
-  { src = 'https://github.com/khoido2003/monokai-v2.nvim' },
 }
-
--- vim.pack.add {https://github.com/catppuccin/nvi
--- -- vim.cmd.colorscheme 'evening'
---
--- vim.pack.add {
---   'https://github.com/oxy2dev/markview.nvim',
--- }
---
--- local presets = require 'markview.presets'
---
--- require('markview').setup {
---   -- path to user tips file
---   preview = {
---     icon_provider = 'internal', -- "mini" or "devicons"
---   },
---   markdown = {
---     headings = presets.headings.glow,
---   },
--- }

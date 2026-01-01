@@ -103,6 +103,10 @@
       "rev": "a1b2bf0",
       "src": "https://github.com/MeanderingProgrammer/render-markdown.nvim"
     },
+    "roslyn.nvim": {
+      "rev": "4deb46c",
+      "src": "https://github.com/seblyng/roslyn.nvim"
+    },
     "rustaceanvim": {
       "rev": "88575b9",
       "src": "https://github.com/mrcjkb/rustaceanvim",

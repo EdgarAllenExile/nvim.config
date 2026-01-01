@@ -10,6 +10,7 @@ require('nvim-treesitter.configs').setup {
   auto_install = true,
   ensure_installed = {
     'c',
+    'c_sharp',
     'diff',
     'git_config',
     'git_rebase',
