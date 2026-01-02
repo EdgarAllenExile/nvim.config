@@ -4,19 +4,18 @@
 
 ### Things to Add:
 
-- Markdown ftplugin
-- Vale / .md lsp / formatter / linter
+- Vale / formatter / linter
 
 ### Things to Change:
 
-Bulk install required plugins
-- Markview is not working correctly, might need to look at which order they are being added
+- Bulk install required plugins
 
 ### Things to Investigate:
 
 - Mise En Place CLI Util
 - That Nvim Tips plugin
 - How good is Clue for actual vim commands
+- Have a look at snacks.nvim
 
 ## Design Goals
 
@@ -40,9 +39,11 @@ This could be in several places:
 
 ### LSPs, Formatters, Linters
 
-| Name | Lang | Type | Command
+| Name | Lang | Type | Command |
 | -------------- | -------------- | --------------- | --------------- |
 | lua-language-server | lua | LSP | `brew install lua-language-server` |
 | StyleLua | lua | Formatter | `brew install stylelua` |
 | LuaChecks | lua | Linter | `sudo luarocks install luacheck` |
+| Roslyn | csharp | LSP | `visual studio` |
+| rust-fmt | rust | Formatter | `cargo install rust-fmt` |
 
