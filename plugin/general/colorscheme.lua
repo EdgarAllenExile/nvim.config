@@ -3,15 +3,15 @@
 --   'https://github.com/loctvl842/monokai-pro.nvim',
 -- }
 
-require('monokai-v2').setup {
-  -- Treesitter settings
-  treesitter = {
-    italic = true,
-  },
-
-  -- Filter selection (default: classic for dark, light for light background)
-  filter = 'pro', -- classic | light | machine | octagon | pro | ristretto | spectrum
-}
+-- require('monokai-v2').setup {
+--   -- Treesitter settings
+--   treesitter = {
+--     italic = true,
+--   },
+--
+--   -- Filter selection (default: classic for dark, light for light background)
+--   filter = 'pro', -- classic | light | machine | octagon | pro | ristretto | spectrum
+-- }
 
 require('monokai-pro').setup {
   filter = 'pro',
