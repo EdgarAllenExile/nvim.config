@@ -5,6 +5,7 @@
 ### Things to Add:
 
 - Vale / formatter / linter
+- Debuggers, how do they work? Do we have a nice fancy GUI? Do we need one..?
 
 ### Things to Change:
 
