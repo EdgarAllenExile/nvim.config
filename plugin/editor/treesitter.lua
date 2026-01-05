@@ -4,9 +4,7 @@ vim.pack.add {
   { src = 'https://github.com/nvim-treesitter/nvim-treesitter-context', version = 'main' },
 }
 
-require('nvim-treesitter').setup()
-
-require('nvim-treesitter.configs').setup {
+require('nvim-treesitter').setup {
   auto_install = true,
   ensure_installed = {
     'c',
