@@ -10,6 +10,8 @@
 ### Things to Change:
 
 - Bulk install required plugins
+- is it possible to automatically remove unused plugins? 
+- Flag when need to delete old lock file
 
 ### Things to Investigate:
 
