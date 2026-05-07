@@ -13,10 +13,15 @@ miniclue.setup {
   clues = {
     -- This is defined in 'plugin/20_keymaps.lua' with Leader group descriptions
     Config.leader_group_clues,
+    { mode = 'n', keys = '<Leader>aa', desc = 'AI Toggle CLI' },
+    { mode = 'n', keys = '<Leader>ac', desc = 'AI Focus CLI' },
+    { mode = 'n', keys = '<Leader>ad', desc = 'AI Close CLI' },
+    { mode = 'n', keys = '<Leader>af', desc = 'AI Send File' },
+    { mode = 'n', keys = '<Leader>ap', desc = 'AI Prompt' },
+    { mode = 'n', keys = '<Leader>as', desc = 'AI Select CLI' },
+    { mode = 'x', keys = '<Leader>at', desc = 'AI Send This' },
+    { mode = 'x', keys = '<Leader>av', desc = 'AI Send Selection' },
     miniclue.gen_clues.square_brackets(),
-    { mode = 'n', keys = '[[', desc = 'Copilot previous suggestion' },
-    { mode = 'n', keys = ']]', desc = 'Copilot next suggestion' },
-    { mode = 'n', keys = 'gr', desc = 'Copilot refresh suggestion' },
     { mode = 'n', keys = '<C-w><C-r>', desc = 'Enter Resize Mode' },
     miniclue.gen_clues.builtin_completion(),
     miniclue.gen_clues.g(),
@@ -62,6 +67,9 @@ miniclue.setup {
 require('mini.diff').setup()
 require('mini.extra').setup()
 require('mini.files').setup {
+  options = {
+    use_as_default_explorer = false,
+  },
   windows = { preview = true },
   content = {
     -- Predicate for which file system entries to show

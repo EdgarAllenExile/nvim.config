@@ -9,7 +9,16 @@ vim.pack.add {
 }
 
 require('blink.cmp').setup {
-  keymap = { preset = 'default' },
+  keymap = {
+    preset = 'default',
+    ['<Tab>'] = {
+      'snippet_forward',
+      function()
+        return require('sidekick').nes_jump_or_apply()
+      end,
+      'fallback',
+    },
+  },
   snippets = { preset = 'luasnip' },
 
   appearance = {

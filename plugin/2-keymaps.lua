@@ -3,6 +3,7 @@
 -- Leader Key Helpers
 _G.Config.leader_group_clues = {
   { mode = 'n', keys = '<Leader>b', desc = '+[B]uffer' },
+  { mode = 'n', keys = '<Leader>a', desc = '+[A]I' },
   { mode = 'n', keys = '<Leader>e', desc = '+[E]xplore/Edit' },
   { mode = 'n', keys = '<Leader>f', desc = '+[F]ind' },
   { mode = 'n', keys = '<Leader>g', desc = '+[G]eneral' },
@@ -48,3 +49,39 @@ nmap_leader('gs', '<Cmd>lua vim.lsp.buf.definition()<CR>', 'Source definition')
 nmap_leader('grt', '<Cmd>lua vim.lsp.buf.type_definition()<CR>', 'Type definition')
 
 xmap_leader('lf', formatting_cmd, 'Format selection')
+
+local sidekick_cli = function()
+  return require('sidekick.cli')
+end
+
+nmap_leader('aa', function()
+  sidekick_cli().toggle()
+end, 'AI Toggle CLI')
+
+nmap_leader('ac', function()
+  sidekick_cli().focus()
+end, 'AI Focus CLI')
+
+nmap_leader('ad', function()
+  sidekick_cli().close()
+end, 'AI Close CLI')
+
+nmap_leader('af', function()
+  sidekick_cli().send({ msg = '{file}' })
+end, 'AI Send File')
+
+nmap_leader('ap', function()
+  sidekick_cli().prompt()
+end, 'AI Prompt')
+
+nmap_leader('as', function()
+  sidekick_cli().select()
+end, 'AI Select CLI')
+
+xmap_leader('at', function()
+  sidekick_cli().send({ msg = '{this}' })
+end, 'AI Send This')
+
+xmap_leader('av', function()
+  sidekick_cli().send({ msg = '{selection}' })
+end, 'AI Send Selection')
