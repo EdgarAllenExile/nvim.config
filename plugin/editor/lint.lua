@@ -6,11 +6,7 @@ local lint = require 'lint'
 
 lint.linters_by_ft = {
   -- markdown = { 'vale' },
-  javascript = { 'eslint' },
-  javascriptreact = { 'eslint' },
   lua = { 'luacheck' },
-  typescript = { 'eslint' },
-  typescriptreact = { 'eslint' },
 }
 
 lint.linters.luacheck = {

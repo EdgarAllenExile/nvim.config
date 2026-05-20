@@ -22,7 +22,7 @@ vim.api.nvim_create_autocmd('PackChanged', {
 local f = function()
   vim.cmd 'setlocal formatoptions-=c formatoptions-=o'
 end
-_G.Config.new_autocmd('FileType', nil, f, "Proper 'formatoptions'")
+_G.Config.new_autocmd('FileType', "*", f, "Proper 'formatoptions'")
 
 -- Linting Auto Command
 vim.api.nvim_create_autocmd({ 'BufWritePost' }, {
