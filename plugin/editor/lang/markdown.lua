@@ -2,6 +2,7 @@
 
 -- local presets = require 'markview.presets'
 require('render-markdown').setup {
+  latex = { enabled = false },
   completions = {
     lsp = {
       enabled = true,

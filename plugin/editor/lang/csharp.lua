@@ -1,3 +1,5 @@
-vim.pack.add {
-  'https://github.com/seblyng/roslyn.nvim',
-}
+-- vim.pack.add {
+--   'https://github.com/seblyng/roslyn.nvim',
+-- }
+--
+-- Using VS Code C# Dev Kit instead

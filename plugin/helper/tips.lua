@@ -1,5 +1,6 @@
--- nui.nvim is declared in plugin/helper/ai.lua
+-- nui.nvim provides the picker UI for neovim-tips
 vim.pack.add {
+  { src = 'https://github.com/MunifTanjim/nui.nvim' },
   'https://github.com/saxon1964/neovim-tips',
 }
 

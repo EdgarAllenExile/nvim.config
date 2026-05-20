@@ -4,10 +4,6 @@
       "rev": "0abc8f390b278c3b4aabc4c004ac8a088b65cf24",
       "src": "https://github.com/L3MON4D3/LuaSnip"
     },
-    "blink-cmp-avante": {
-      "rev": "4f494c6e124acbe31a8f5d58effa0c14aa38a6d5",
-      "src": "https://github.com/Kaiser-Yang/blink-cmp-avante"
-    },
     "blink-cmp-copilot": {
       "rev": "439cff78780c033aa23cf061d7315314b347e3c1",
       "src": "https://github.com/giuxtaposition/blink-cmp-copilot"
@@ -88,6 +84,10 @@
       "src": "https://github.com/nvim-treesitter/nvim-treesitter-textobjects",
       "version": "'main'"
     },
+    "persistence.nvim": {
+      "rev": "b20b2a7887bd39c1a356980b45e03250f3dce49c",
+      "src": "https://github.com/folke/persistence.nvim"
+    },
     "plenary.nvim": {
       "rev": "74b06c6c75e4eeb3108ec01852001636d85a932b",
       "src": "https://github.com/nvim-lua/plenary.nvim"
@@ -109,17 +109,9 @@
       "src": "https://github.com/mrcjkb/rustaceanvim",
       "version": "6.0.0 - 7.0.0"
     },
-    "sidekick.nvim": {
-      "rev": "208e1c5b8170c01fd1d07df0139322a76479b235",
-      "src": "https://github.com/folke/sidekick.nvim"
-    },
     "smart-splits.nvim": {
       "rev": "3151100591670148cb0065388117622212208ee3",
       "src": "https://github.com/mrjones2014/smart-splits.nvim"
-    },
-    "snacks.nvim": {
-      "rev": "ad9ede6a9cddf16cedbd31b8932d6dcdee9b716e",
-      "src": "https://github.com/folke/snacks.nvim"
     },
     "telescope-fzf-native.nvim": {
       "rev": "b25b749b9db64d375d782094e2b9dce53ad53a40",

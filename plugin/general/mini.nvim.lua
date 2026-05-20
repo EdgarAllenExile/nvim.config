@@ -13,14 +13,6 @@ miniclue.setup {
   clues = {
     -- This is defined in 'plugin/20_keymaps.lua' with Leader group descriptions
     Config.leader_group_clues,
-    { mode = 'n', keys = '<Leader>aa', desc = 'AI Toggle CLI' },
-    { mode = 'n', keys = '<Leader>ac', desc = 'AI Focus CLI' },
-    { mode = 'n', keys = '<Leader>ad', desc = 'AI Close CLI' },
-    { mode = 'n', keys = '<Leader>af', desc = 'AI Send File' },
-    { mode = 'n', keys = '<Leader>ap', desc = 'AI Prompt' },
-    { mode = 'n', keys = '<Leader>as', desc = 'AI Select CLI' },
-    { mode = 'x', keys = '<Leader>at', desc = 'AI Send This' },
-    { mode = 'x', keys = '<Leader>av', desc = 'AI Send Selection' },
     miniclue.gen_clues.square_brackets(),
     { mode = 'n', keys = '<C-w><C-r>', desc = 'Enter Resize Mode' },
     miniclue.gen_clues.builtin_completion(),

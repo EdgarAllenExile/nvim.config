@@ -1,19 +1,6 @@
 -- plenary.nvim is declared in init.lua (early bootstrap)
 vim.pack.add {
-  { src = 'https://github.com/folke/snacks.nvim' },
-  { src = 'https://github.com/folke/sidekick.nvim' },
-  { src = 'https://github.com/MunifTanjim/nui.nvim' },
   { src = 'https://github.com/zbirenbaum/copilot.lua' },
-}
-
-require('snacks').setup {
-  picker = { enabled = true },
-}
-
-require('sidekick').setup {
-  cli = {
-    picker = 'snacks',
-  },
 }
 
 require('copilot').setup {
@@ -49,14 +36,3 @@ require('copilot').setup {
     },
   },
 }
-
-vim.keymap.set('n', '<Tab>', function()
-  local sidekick_nes = require 'sidekick.nes'
-  if sidekick_nes.have() then
-    if require('sidekick').nes_jump_or_apply() then
-      return ''
-    end
-  end
-
-  return '<Tab>'
-end, { expr = true, desc = 'Apply Sidekick NES' })
