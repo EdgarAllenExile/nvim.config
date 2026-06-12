@@ -18,7 +18,7 @@
       "src": "https://github.com/stevearc/conform.nvim"
     },
     "copilot.lua": {
-      "rev": "1d457ad5f267b8ef855a6b8b3fe152403cb00947",
+      "rev": "dada2f90220861d6e9d30eca6a3997cf5d0c9936",
       "src": "https://github.com/zbirenbaum/copilot.lua"
     },
     "fidget.nvim": {
@@ -30,7 +30,7 @@
       "src": "https://github.com/rafamadriz/friendly-snippets"
     },
     "mini.nvim": {
-      "rev": "232ceeb14f7f7e849056309b85cb2fed712db46f",
+      "rev": "a59a9b7fb0a42cbcf022938ee5f0724320b66f63",
       "src": "https://github.com/nvim-mini/mini.nvim"
     },
     "monokai-pro.nvim": {
@@ -58,11 +58,11 @@
       "src": "https://github.com/rcarriga/nvim-dap-ui"
     },
     "nvim-lint": {
-      "rev": "d48f3a76189d03b2239f6df1b2f7e3fa8353743b",
+      "rev": "99cbc3ca8a76845fca50e496be7212bebf907dd3",
       "src": "https://github.com/mfussenegger/nvim-lint"
     },
     "nvim-lspconfig": {
-      "rev": "9573948c38bfabeec353ae7dd7d3ffec4c506a6b",
+      "rev": "ed19590a3a9792901553c388d1aadafce012f80d",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-nio": {
@@ -101,7 +101,7 @@
       "src": "https://github.com/MeanderingProgrammer/render-markdown.nvim"
     },
     "roslyn.nvim": {
-      "rev": "dedfc3f539c51a5841feb572e8b73ec58ff2ca9d",
+      "rev": "9c5da79216e5776e020dcc6c157983f5352f3f11",
       "src": "https://github.com/seblyng/roslyn.nvim"
     },
     "rustaceanvim": {
@@ -110,7 +110,7 @@
       "version": "6.0.0 - 7.0.0"
     },
     "smart-splits.nvim": {
-      "rev": "1865e6826b1cd90098f198acb0f5b744a7b40c22",
+      "rev": "6806149fd36d1c5e797debe3e18b2c07219b685a",
       "src": "https://github.com/mrjones2014/smart-splits.nvim"
     },
     "telescope-fzf-native.nvim": {
