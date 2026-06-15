@@ -6,6 +6,7 @@ vim.pack.add {
 vim.lsp.enable {
   'clangd',
   'lua_ls',
+  -- Python LSPs - add pyright, python-language-server if you want
 }
 
 vim.lsp.config('*', {
