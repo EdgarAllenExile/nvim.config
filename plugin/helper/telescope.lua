@@ -1,36 +1,10 @@
 -- telescope.nvim and plenary.nvim are declared in init.lua (early bootstrap)
 vim.pack.add {
-  {
-    src = 'https://github.com/nvim-telescope/telescope-fzf-native.nvim',
-    -- data = {
-    --   run = function(p)
-    --     vim.system("bash", { stdin = 'which cmake && cd ' .. p.spec.path .. ' && cmake' })
-    --   end,
-    -- },
-  },
+  { src = 'https://github.com/nvim-telescope/telescope-fzf-native.nvim' },
   'https://github.com/nvim-telescope/telescope-ui-select.nvim',
 }
 
--- vim.cmd.packadd { 'telescope' }
 local telescope = require 'telescope'
--- require('telescope').setup()
--- require('telescope-fzf-native').setup()
--- telescope.setup()
-
--- require('telescope').setup {
---   extensions = {
---     fzf = {
---       fuzzy = true,                    -- false will only do exact matching
---       override_generic_sorter = true,  -- override the generic sorter
---       override_file_sorter = true,     -- override the file sorter
---       case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
---                                        -- the default case_mode is "smart_case"
---     }
---   }
--- }
--- To get fzf loaded and working with telescope, you need to call
--- load_extension, somewhere after setup function:
--- require('telescope').load_extension('fzf')
 
 telescope.setup {
   extensions = {
@@ -40,7 +14,9 @@ telescope.setup {
   },
 }
 
--- telescope.load_extension('fzf')
+-- Native fzf sorter (built via the PackChanged hook in 3-autocommands.lua).
+-- pcall: don't break startup if the binary hasn't been built yet.
+pcall(telescope.load_extension, 'fzf')
 
 -- See `:help telescope.builtin`
 local builtin = require 'telescope.builtin'

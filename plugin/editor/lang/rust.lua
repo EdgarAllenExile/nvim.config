@@ -37,35 +37,21 @@ vim.g.rustaceanvim = function()
     dap = {
       adapter = cfg.get_codelldb_adapter(codelldb_path, liblldb_path),
     },
+    -- Clippy-on-save is handled by rustaceanvim's default
+    -- `tools.enable_clippy = true`; no `checkOnSave` settings needed.
     server = {
       default_settings = {
         ['rust-analyzer'] = {
-          assist = {
-            importGranularity = "crate",
-            importPrefix = "crate",
+          imports = {
+            granularity = { group = 'crate' },
+            prefix = 'crate',
           },
           completion = {
-            autoimport = {
-              enable = true,
-            },
-            postfix = {
-              enable = true,
-            },
-          },
-          checkOnSave = {
-            enable = true,
-            command = "clippy",
-          },
-          diagnostics = {
-            enable = true,
-            enableExperimental = true,
+            autoimport = { enable = true },
+            postfix = { enable = true },
           },
         },
       },
-    },
-    tools = {
-      hoverActions = true,
-      autoSetHidleType = true,
     },
   }
 end

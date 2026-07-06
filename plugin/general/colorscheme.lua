@@ -27,15 +27,7 @@ require('monokai-pro').setup {
     }
   end,
 }
-require('catppuccin').setup {
-  color_overrides = {
-    latte = {
-      base = '#ff0000',
-      mantle = '#242424',
-      crust = '#474747',
-    },
-  },
-}
+require('catppuccin').setup {}
 
 -- require('sonokai').setup {
 --   sonokai_style = 'atlantis',

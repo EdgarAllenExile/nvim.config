@@ -135,32 +135,10 @@ end, { desc = 'Toggle MiniFiles in CWD' })
 
 require('mini.git').setup()
 
--- Simple and easy statusline.
---  You could remove this setup call if you don't like it,
---  and try some other statusline plugin
-local statusline = require 'mini.statusline'
-statusline.setup { use_icons = vim.g.have_nerd_font }
-
--- You can configure sections in the statusline by overriding their
--- default behavior. For example, here we set the section for
--- cursor location to LINE:COLUMN
--- ---@diagnostic disable-next-line: duplicate-set-field
--- statusline.section_location = function()
---   return '%2l/%L:%-2v'
--- end
---
--- end,
--- init = function()
---   package.preload['nvim-web-devicons'] = function()
---     require('mini.icons').mock_nvim_web_devicons()
---     return package.loaded['nvim-web-devicons']
---   end
--- end,
-
 -- Appearance
-require('mini.colors').setup()
+-- (mini.colors is an interactive tool; require it on demand rather than at startup)
 require('mini.icons').setup { mock_nvim_web_devicons = true }
 require('mini.notify').setup()
 require('mini.starter').setup()
-require('mini.statusline').setup()
+require('mini.statusline').setup { use_icons = vim.g.have_nerd_font }
 require('mini.tabline').setup()

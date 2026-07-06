@@ -73,7 +73,6 @@ This could be in several places:
 | `nvim-nio` | Async primitives for DAP UI | `plugin/editor/dap.lua` |
 | `nvim-lint` | Filetype lint runner | `plugin/editor/lint.lua` |
 | `nvim-lspconfig` | LSP server configuration | `plugin/editor/lsp-config.lua` |
-| `fidget.nvim` | LSP progress UI | `plugin/editor/lsp-config.lua` |
 | `nvim-treesitter` | Syntax parsing | `plugin/editor/treesitter.lua` |
 | `nvim-treesitter-textobjects` | Syntax textobjects | `plugin/editor/treesitter.lua` |
 | `nvim-treesitter-context` | Code context header | `plugin/editor/treesitter.lua` |

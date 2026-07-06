@@ -5,15 +5,14 @@
 -- end
 -- vim.api.nvim_create_autocmd('FileType', { nil, f, "Proper 'formatoptions'" })
 --
+-- Build hooks: run a plugin's build step after install/update.
+-- (blink.cmp needs no hook: it is pinned to a release tag via its version
+-- range, so it downloads its prebuilt fuzzy-matcher binary automatically.)
 vim.api.nvim_create_autocmd('PackChanged', {
   callback = function(ev)
-    -- Use available |event-data|
     local name, kind = ev.data.spec.name, ev.data.kind
-    -- Run build script after plugin's code has changed
-    if name == 'blink.cmp' and (kind == 'install' or kind == 'update') then
-      vim.system({ 'cargo build --release' }, { cwd = ev.data.path })
-    elseif name == 'telescope-fzf-native' and (kind == 'install' or kind == 'update') then
-      vim.system({ 'cmake --build build --config Release' }, { cwd = ev.data.path })
+    if name == 'telescope-fzf-native.nvim' and (kind == 'install' or kind == 'update') then
+      vim.system({ 'make' }, { cwd = ev.data.path })
     end
   end,
 })
