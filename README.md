@@ -51,7 +51,9 @@ This could be in several places:
 | rust-analyzer | rust | LSP | `brew install rust-analyzer` |
 | rustfmt | rust | Formatter | `rustup component add rustfmt` |
 | codelldb | rust | DAP | `brew install --cask vscode-lldb` |
-| Roslyn | csharp | LSP | `dotnet` / Visual Studio |
+| roslyn-language-server | csharp | LSP | `dotnet tool install -g roslyn-language-server --prerelease` (requires the .NET SDK; see [roslyn.nvim](https://github.com/seblyng/roslyn.nvim#-installation) for the up-to-date feed) |
+| pyright | python | LSP | `pip install pyright` or `brew install pyright` |
+| ruff | python | Formatter/Linter | `pip install ruff` or `brew install ruff` |
 | prettierd | javascript/typescript | Formatter | `npm install -g prettierd` |
 | eslint | javascript/typescript | Linter | `npm install -g eslint` |
 

@@ -20,6 +20,7 @@ require('nvim-treesitter').install {
   'json',
   'lua',
   'markdown',
+  'python',
   'rust',
   'sql',
   'tsx',

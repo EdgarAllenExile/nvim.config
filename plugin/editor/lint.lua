@@ -9,6 +9,7 @@ lint.linters_by_ft = {
   javascript = { 'eslint' },
   javascriptreact = { 'eslint' },
   lua = { 'luacheck' },
+  python = { 'ruff' },
   typescript = { 'eslint' },
   typescriptreact = { 'eslint' },
 }

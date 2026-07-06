@@ -11,6 +11,7 @@ This file lists the active custom keybinds in this Neovim config.
 - `<Leader>g` General, Git, and language actions
 - `<Leader>l` Language
 - `<Leader>m` Map
+- `<Leader>n` Neovim Tips
 - `<Leader>o` Other
 - `<Leader>s` Session
 - `<Leader>t` Terminal
@@ -52,6 +53,14 @@ This file lists the active custom keybinds in this Neovim config.
 - `<leader>/` current buffer search
 - `<leader>f/` live grep open files
 - `<leader>sn` Neovim config files
+
+## Session (persistence.nvim)
+
+- `<leader>sl` load session for cwd
+- `<leader>sL` load last session
+- `<leader>sS` select session to load
+- `<leader>ss` save session now
+- `<leader>sd` stop session saving (disable)
 
 ## AI (Claude Code)
 

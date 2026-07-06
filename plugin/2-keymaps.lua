@@ -9,6 +9,7 @@ _G.Config.leader_group_clues = {
   { mode = 'n', keys = '<Leader>g', desc = '+[G]eneral' },
   { mode = 'n', keys = '<Leader>l', desc = '+Language' },
   { mode = 'n', keys = '<Leader>m', desc = '+Map' },
+  { mode = 'n', keys = '<Leader>n', desc = '+Neovim Tips' },
   { mode = 'n', keys = '<Leader>o', desc = '+Other' },
   { mode = 'n', keys = '<Leader>s', desc = '+Session' },
   { mode = 'n', keys = '<Leader>t', desc = '+Terminal' },
@@ -29,7 +30,7 @@ local xmap_leader = function(suffix, rhs, desc)
 end
 
 -- Get away from things
-vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>', { desc = 'Clear search highlight' })
 
 -- Buffer
 nmap_leader('bn', '<Cmd>bn<CR>', 'Next Buffer')

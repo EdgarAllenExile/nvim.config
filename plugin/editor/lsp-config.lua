@@ -6,30 +6,30 @@ vim.pack.add {
 vim.lsp.enable {
   'clangd',
   'lua_ls',
-  -- Python LSPs - add pyright, python-language-server if you want
+  'pyright',
 }
 
-vim.lsp.config('*', {
-  capabilities = {
-    textDocument = {
-      semanticTokens = {
-        multilineTokenSupport = true,
+-- Deferred: plugin/helper/blink.lua sources after this file (alphabetical
+-- load order), so blink.cmp isn't on the runtimepath yet at this point.
+vim.schedule(function()
+  vim.lsp.config('*', {
+    capabilities = require('blink.cmp').get_lsp_capabilities {
+      textDocument = {
+        semanticTokens = {
+          multilineTokenSupport = true,
+        },
       },
     },
-  },
-})
+  })
+end)
 
--- vim.lsp.config('roslyn', {
---   on_attach = function()
---     print 'This will run when the server attaches!'
---   end,
---   settings = {
---     ['csharp|inlay_hints'] = {
---       csharp_enable_inlay_hints_for_implicit_object_creation = true,
---       csharp_enable_inlay_hints_for_implicit_variable_types = true,
---     },
---     ['csharp|code_lens'] = {
---       dotnet_enable_references_code_lens = true,
---     },
---   },
--- })
+-- Render inlay hints for any attached client that supports them (e.g.
+-- roslyn's csharp|inlay_hints and typescript-tools' includeInlay* settings).
+vim.api.nvim_create_autocmd('LspAttach', {
+  callback = function(args)
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
+    if client and client:supports_method 'textDocument/inlayHint' then
+      vim.lsp.inlay_hint.enable(true, { bufnr = args.buf })
+    end
+  end,
+})

@@ -4,14 +4,34 @@ vim.pack.add {
 }
 
 -- Configure persistence.nvim
-local status_ok, persistence = pcall(require, "persistence")
+local status_ok, persistence = pcall(require, 'persistence')
 if not status_ok then
   return
 end
 
 persistence.setup {
-  dir = vim.fn.stdpath('state') .. '/sessions/', -- directory where session files are saved
+  dir = vim.fn.stdpath 'state' .. '/sessions/', -- directory where session files are saved
   options = { 'buffers', 'curdir', 'tabpages', 'winsize', 'help', 'globals', 'skiprtp' }, -- sessionoptions used for saving
   pre_save = nil, -- a function to call before saving the session
   save_empty = false, -- don't save if there are no open file buffers
 }
+
+vim.keymap.set('n', '<leader>sl', function()
+  persistence.load()
+end, { desc = 'Load session for cwd' })
+
+vim.keymap.set('n', '<leader>sL', function()
+  persistence.load { last = true }
+end, { desc = 'Load last session' })
+
+vim.keymap.set('n', '<leader>sS', function()
+  persistence.select()
+end, { desc = 'Select session to load' })
+
+vim.keymap.set('n', '<leader>ss', function()
+  persistence.save()
+end, { desc = 'Save session now' })
+
+vim.keymap.set('n', '<leader>sd', function()
+  persistence.stop()
+end, { desc = "Stop session saving ('d'isable)" })
