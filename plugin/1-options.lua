@@ -50,6 +50,11 @@ vim.o.iskeyword = '@,48-57,_,192-255,-' -- Treat dash as `word` textobject part
 -- possibly followed by punctuation (. or `)`) followed by at least one space".
 -- vim.o.formatlistpat = [[^\s*[0-9\-\+\*]\+[\.\)]*\s\+]]
 
+-- Folding (foldexpr is set per-buffer by the treesitter autocommand)
+vim.o.foldlevel = 99 -- Open buffers with all folds expanded
+vim.o.foldlevelstart = 99
+vim.o.foldtext = '' -- Show the (highlighted) first line as the fold summary
+
 -- Misc Config
 vim.o.confirm = true -- Requires confirmation if quitting without saving
 

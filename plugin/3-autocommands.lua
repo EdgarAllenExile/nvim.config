@@ -26,15 +26,17 @@ vim.api.nvim_create_autocmd({ 'BufWritePost' }, {
   end,
 })
 
--- This turns on Treesitter highlights
+-- This turns on Treesitter highlights (and folding where a parser exists)
 vim.api.nvim_create_autocmd('FileType', {
   group = vim.api.nvim_create_augroup('EnableTreesitterHighlighting', { clear = true }),
-  desc = 'Try to enable tree-sitter syntax highlighting',
+  desc = 'Try to enable tree-sitter syntax highlighting and folds',
   pattern = '*', -- run on *all* filetypes
   callback = function()
-    pcall(function()
-      vim.treesitter.start()
-    end)
+    local ok = pcall(vim.treesitter.start)
+    if ok then
+      vim.wo[0][0].foldmethod = 'expr'
+      vim.wo[0][0].foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+    end
   end,
 })
 

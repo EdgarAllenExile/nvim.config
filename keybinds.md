@@ -93,6 +93,23 @@ Custom additions:
 - `gra` code action with rust-analyzer grouping (overrides built-in)
 - `K` rust hover actions
 
+## Treesitter Textobjects
+
+Selection (via mini.ai, work with any operator — `y`, `d`, `c`, `v`, ...):
+
+- `aF` / `iF` around/inside function definition
+- `ac` / `ic` around/inside class
+- `ao` / `io` around/inside block, conditional, or loop
+- (mini.ai defaults still apply: `f` function call, `a` argument, `q` quotes, `b` brackets, `t` tags)
+
+Movement:
+
+- `]f` / `[f` next/previous function start
+- `]F` / `[F` next/previous function end
+- `]c` / `[c` next/previous class start
+
+Folding is treesitter-driven (`zc`/`zo`/`za` etc.); buffers open fully expanded.
+
 ## Tips
 
 - `<leader>nto` open Neovim tips
