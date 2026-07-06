@@ -53,26 +53,17 @@ This file lists the active custom keybinds in this Neovim config.
 - `<leader>f/` live grep open files
 - `<leader>sn` Neovim config files
 
-## AI and Copilot
+## AI (Claude Code)
 
-- `<Leader>aa` toggle Sidekick CLI
-- `<Leader>ac` focus Sidekick CLI
-- `<Leader>ad` close Sidekick CLI
-- `<Leader>af` send current file to Sidekick CLI
-- `<Leader>ap` open Sidekick prompt picker
-- `<Leader>as` select Sidekick CLI
-- `<Leader>at` send current text to Sidekick CLI
-- `<Leader>av` send visual selection to Sidekick CLI
-- `[[` previous Copilot suggestion
-- `]]` next Copilot suggestion
-- `gr` refresh Copilot panel
-- `<Tab>` in blink.cmp tries Sidekick NES, then snippets, then fallback
-- `<A-;>` accept Copilot suggestion
-- `<A-]>` next Copilot panel item
-- `<A-[>` previous Copilot panel item
-- `<C-]>` dismiss Copilot suggestion
-- `<CR>` accept Copilot panel suggestion
-- `<M-CR>` open Copilot panel
+- `<Leader>ac` toggle Claude Code terminal
+- `<Leader>af` focus Claude Code terminal
+- `<Leader>ar` resume last Claude Code session
+- `<Leader>aC` continue Claude Code session
+- `<Leader>am` select Claude model
+- `<Leader>ab` add current buffer to Claude context
+- `<Leader>as` (visual) send selection to Claude
+- `<Leader>aa` accept Claude diff
+- `<Leader>ad` deny Claude diff
 
 ## Rust
 

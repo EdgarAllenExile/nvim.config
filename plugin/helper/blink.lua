@@ -4,7 +4,6 @@ vim.pack.add {
     version = vim.version.range '1.*',
   },
   'https://github.com/rafamadriz/friendly-snippets',
-  'https://github.com/giuxtaposition/blink-cmp-copilot',
   'https://github.com/L3MON4D3/LuaSnip',
 }
 
@@ -24,15 +23,7 @@ require('blink.cmp').setup {
   },
 
   sources = {
-    default = { 'lsp', 'path', 'snippets', 'buffer', 'copilot' },
-    providers = {
-      copilot = {
-        name = 'copilot',
-        module = 'blink-cmp-copilot',
-        score_offset = 100,
-        async = true,
-      },
-    },
+    default = { 'lsp', 'path', 'snippets', 'buffer' },
   },
 
   signature = { enabled = true },

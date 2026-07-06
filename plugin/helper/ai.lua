@@ -1,38 +1,25 @@
 -- plenary.nvim is declared in init.lua (early bootstrap)
 vim.pack.add {
-  { src = 'https://github.com/zbirenbaum/copilot.lua' },
+  { src = 'https://github.com/coder/claudecode.nvim' },
 }
 
-require('copilot').setup {
-  panel = {
-    enabled = true,
-    auto_refresh = false,
-    keymap = {
-      jump_prev = '<A-[>',
-      jump_next = '<A-]>',
-      accept = '<A-;>',
-      refresh = 'gr',
-      open = '<M-CR>',
-    },
-    layout = {
-      position = 'bottom', -- | top | left | right | bottom |
-      ratio = 0.4,
-    },
-  },
-  suggestion = {
-    enabled = true,
-    auto_trigger = true,
-    hide_during_completion = true,
-    debounce = 15,
-    trigger_on_accept = true,
-    keymap = {
-      accept = '<C-;>',
-      accept_word = false,
-      accept_line = false,
-      next = ']]',
-      prev = '[[',
-      dismiss = '<C-]>',
-      toggle_auto_trigger = false,
-    },
+require('claudecode').setup {
+  terminal = {
+    provider = 'native', -- avoids a snacks.nvim dependency
   },
 }
+
+local nmap_leader = function(suffix, rhs, desc)
+  vim.keymap.set('n', '<Leader>' .. suffix, rhs, { desc = desc })
+end
+
+nmap_leader('ac', '<Cmd>ClaudeCode<CR>', 'Toggle Claude')
+nmap_leader('af', '<Cmd>ClaudeCodeFocus<CR>', 'Focus Claude')
+nmap_leader('ar', '<Cmd>ClaudeCode --resume<CR>', 'Resume Claude')
+nmap_leader('aC', '<Cmd>ClaudeCode --continue<CR>', 'Continue Claude')
+nmap_leader('am', '<Cmd>ClaudeCodeSelectModel<CR>', 'Select Claude model')
+nmap_leader('ab', '<Cmd>ClaudeCodeAdd %<CR>', 'Add current buffer')
+nmap_leader('aa', '<Cmd>ClaudeCodeDiffAccept<CR>', 'Accept diff')
+nmap_leader('ad', '<Cmd>ClaudeCodeDiffDeny<CR>', 'Deny diff')
+
+vim.keymap.set('x', '<Leader>as', '<Cmd>ClaudeCodeSend<CR>', { desc = 'Send selection to Claude' })

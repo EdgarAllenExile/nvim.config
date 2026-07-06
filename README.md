@@ -79,13 +79,9 @@ This could be in several places:
 | `rustaceanvim` | Rust LSP and DAP integration | `plugin/editor/lang/rust.lua` |
 | `typescript-tools.nvim` | TypeScript LSP integration | `plugin/editor/lang/typescript.lua` |
 | `mini.nvim` | Core editing and workflow modules | `plugin/general/mini.nvim.lua` |
-| `snacks.nvim` | Picker UI for Sidekick | `plugin/helper/ai.lua` |
-| `sidekick.nvim` | AI CLI and NES workflow | `plugin/helper/ai.lua` |
-| `nui.nvim` | UI primitives for AI tools | `plugin/helper/ai.lua` |
-| `copilot.lua` | Copilot suggestions and panel | `plugin/helper/ai.lua` |
+| `claudecode.nvim` | Claude Code IDE integration (chat, diffs, context) | `plugin/helper/ai.lua` |
 | `blink.cmp` | Completion engine | `plugin/helper/blink.lua` |
 | `friendly-snippets` | Snippet collection | `plugin/helper/blink.lua` |
-| `blink-cmp-copilot` | Copilot completion source | `plugin/helper/blink.lua` |
 | `LuaSnip` | Snippet engine | `plugin/helper/blink.lua` |
 | `smart-splits.nvim` | Window movement and resizing | `plugin/helper/smart-splits.lua` |
 | `telescope-fzf-native.nvim` | Telescope sorter extension | `plugin/helper/telescope.lua` |
