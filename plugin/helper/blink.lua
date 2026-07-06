@@ -4,7 +4,6 @@ vim.pack.add {
     version = vim.version.range '1.*',
   },
   'https://github.com/rafamadriz/friendly-snippets',
-  'https://github.com/L3MON4D3/LuaSnip',
 }
 
 require('blink.cmp').setup {
@@ -12,7 +11,9 @@ require('blink.cmp').setup {
     preset = 'default',
     ['<Tab>'] = { 'snippet_forward', 'fallback' },
   },
-  snippets = { preset = 'luasnip' },
+  -- Default snippet preset: expansion via native vim.snippet, with
+  -- friendly-snippets feeding the `snippets` source. (LuaSnip removed —
+  -- only needed for authoring advanced dynamic snippets.)
 
   appearance = {
     nerd_font_variant = 'mono',

@@ -1,7 +1,7 @@
 local bufnr = vim.api.nvim_get_current_buf()
-vim.keymap.set('n', '<leader>gra', function()
+-- Override the built-in `gra` (code action) with rustaceanvim's grouped version
+vim.keymap.set({ 'n', 'x' }, 'gra', function()
   vim.cmd.RustLsp 'codeAction' -- supports rust-analyzer's grouping
-  -- or vim.lsp.buf.codeAction() if you don't want grouping.
 end, { silent = true, buffer = bufnr, desc = 'Code Actions (Rust grouping)' })
 
 MiniClue.ensure_buf_triggers(bufnr)

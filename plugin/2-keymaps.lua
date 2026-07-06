@@ -38,16 +38,15 @@ nmap_leader('bp', '<Cmd>bp<CR>', 'Previous Buffer')
 nmap_leader('ba', '<Cmd>b#<CR>', 'Alternate')
 
 -- General or LSP Commands
+--
+-- NOTE: most LSP actions use Neovim's built-in default keymaps (no leader):
+--   grn = rename, grr = references, gri = implementation, gra = code action,
+--   grt = type definition, gO = document symbols, K = hover,
+--   <C-s> (insert) = signature help, grx = codelens. See :h lsp-defaults.
 local formatting_cmd = '<Cmd>lua require("conform").format({lsp_fallback=true})<CR>'
 
-nmap_leader('gra', '<Cmd>lua vim.lsp.buf.code_action()<CR>', 'Code Actions')
 nmap_leader('gd', '<Cmd>lua vim.diagnostic.open_float()<CR>', 'Diagnostic popup')
 nmap_leader('gf', formatting_cmd, 'Format')
-nmap_leader('gri', '<Cmd>lua vim.lsp.buf.implementation()<CR>', 'Implementation')
-nmap_leader('gh', '<Cmd>lua vim.lsp.buf.hover()<CR>', 'Hover')
-nmap_leader('grn', '<Cmd>lua vim.lsp.buf.rename()<CR>', 'Rename')
-nmap_leader('grr', '<Cmd>lua vim.lsp.buf.references()<CR>', 'References')
 nmap_leader('gs', '<Cmd>lua vim.lsp.buf.definition()<CR>', 'Source definition')
-nmap_leader('grt', '<Cmd>lua vim.lsp.buf.type_definition()<CR>', 'Type definition')
 
 xmap_leader('lf', formatting_cmd, 'Format selection')

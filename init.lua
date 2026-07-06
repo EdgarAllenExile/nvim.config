@@ -1,3 +1,6 @@
+-- Byte-compile and cache Lua modules (~30% faster startup)
+vim.loader.enable()
+
 _G.Config = {}
 
 -- Define custom autocommand group and helper to create an autocommand.

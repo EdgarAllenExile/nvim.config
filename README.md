@@ -83,7 +83,6 @@ This could be in several places:
 | `claudecode.nvim` | Claude Code IDE integration (chat, diffs, context) | `plugin/helper/ai.lua` |
 | `blink.cmp` | Completion engine | `plugin/helper/blink.lua` |
 | `friendly-snippets` | Snippet collection | `plugin/helper/blink.lua` |
-| `LuaSnip` | Snippet engine | `plugin/helper/blink.lua` |
 | `smart-splits.nvim` | Window movement and resizing | `plugin/helper/smart-splits.lua` |
 | `telescope-fzf-native.nvim` | Telescope sorter extension | `plugin/helper/telescope.lua` |
 | `telescope-ui-select.nvim` | Telescope UI select extension | `plugin/helper/telescope.lua` |

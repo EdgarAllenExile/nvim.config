@@ -8,19 +8,8 @@ vim.lsp.enable {
   'pyright',
 }
 
--- Deferred: plugin/helper/blink.lua sources after this file (alphabetical
--- load order), so blink.cmp isn't on the runtimepath yet at this point.
-vim.schedule(function()
-  vim.lsp.config('*', {
-    capabilities = require('blink.cmp').get_lsp_capabilities {
-      textDocument = {
-        semanticTokens = {
-          multilineTokenSupport = true,
-        },
-      },
-    },
-  })
-end)
+-- blink.cmp registers its completion capabilities automatically on 0.11+
+-- via vim.lsp.config('*'); no manual get_lsp_capabilities() merge needed.
 
 -- Render inlay hints for any attached client that supports them (e.g.
 -- roslyn's csharp|inlay_hints and typescript-tools' includeInlay* settings).

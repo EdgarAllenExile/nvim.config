@@ -74,9 +74,22 @@ This file lists the active custom keybinds in this Neovim config.
 - `<Leader>aa` accept Claude diff
 - `<Leader>ad` deny Claude diff
 
+## LSP
+
+Built-in Neovim defaults (see `:h lsp-defaults`): `grn` rename, `grr`
+references, `gri` implementation, `gra` code action, `grt` type definition,
+`gO` document symbols, `K` hover, `<C-s>` (insert) signature help.
+
+Custom additions:
+
+- `<leader>gd` diagnostic popup
+- `<leader>gf` format buffer
+- `<leader>gs` go to definition
+- `<leader>lf` (visual) format selection
+
 ## Rust
 
-- `<leader>gra` code action / rust action
+- `gra` code action with rust-analyzer grouping (overrides built-in)
 - `K` rust hover actions
 
 ## Tips

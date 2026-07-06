@@ -10,10 +10,7 @@ vim.schedule(function()
   vim.o.clipboard = 'unnamedplus'
 end)
 
-vim.cmd 'filetype plugin indent on'
-if vim.fn.exists 'syntax_on' ~= 1 then
-  vim.cmd 'syntax enable'
-end
+-- ('filetype plugin indent on' and 'syntax enable' are Neovim defaults)
 
 -- User Interface Config
 vim.o.breakindent = true -- No wrapped line overhand
@@ -23,7 +20,6 @@ vim.o.linebreak = true -- Wrap lines at break at
 vim.o.list = true -- Nice little text indicators
 vim.o.number = true -- Line numbers
 -- vim.o.pumheight 	= 10		-- Smaller popup menu		*** Test *
-vim.o.ruler = true -- No cursor location
 vim.o.showmode = false -- No mode in commandline
 vim.o.signcolumn = 'yes' -- Always show
 vim.o.splitbelow = true -- Horizontal splits spawn below active window
@@ -34,15 +30,14 @@ vim.o.winborder = 'single' -- Use single border
 vim.o.scrolloff = 20 -- Keeps cursor XX lines above / below end of screen
 
 -- Editor Config
-vim.o.autoindent = true -- Enable
+-- ('autoindent' and 'incsearch' are Neovim defaults; 'smartindent' removed —
+-- it is a C-era heuristic that fights treesitter/ftplugin indentation)
 vim.o.expandtab = true -- Tab to Space
 -- vim.o.formatoptions = 'rqnl1j' -- Improve comment editing **Test**
 vim.o.ignorecase = true -- Case insensitive searches
-vim.o.incsearch = true -- Per character search
 vim.o.infercase = true -- Guess case for completions
 vim.o.shiftwidth = 2 -- 2 spaces per indentation
 vim.o.smartcase = true -- Case sensitive if appropriate
-vim.o.smartindent = true -- Not actually sure what this done ngl
 vim.o.spelloptions = 'camel' -- Treat camelCase word parts as separate words
 vim.o.tabstop = 2 -- Tabs are two spaces
 vim.o.softtabstop = 2 -- Does not actually insert tabs?
