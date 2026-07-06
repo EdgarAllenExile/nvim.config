@@ -2,32 +2,17 @@ vim.pack.add {
   'https://github.com/mfussenegger/nvim-lint',
 }
 
-local lint = require 'lint'
+-- Note: Python linting comes from the ruff LSP (see lsp-config.lua) and Lua
+-- diagnostics from lua_ls, so neither needs an nvim-lint entry.
 
-lint.linters_by_ft = {
+-- eslint_d daemonizes eslint, avoiding a Node cold start on every lint run.
+-- Tie the daemon's lifetime to this Neovim process:
+vim.env.ESLINT_D_PPID = vim.fn.getpid()
+
+require('lint').linters_by_ft = {
   -- markdown = { 'vale' },
-  javascript = { 'eslint' },
-  javascriptreact = { 'eslint' },
-  lua = { 'luacheck' },
-  python = { 'ruff' },
-  typescript = { 'eslint' },
-  typescriptreact = { 'eslint' },
-}
-
-lint.linters.luacheck = {
-  name = 'luacheck',
-  cmd = 'luacheck',
-  stdin = true,
-  args = {
-    '--globals',
-    'vim',
-    'lvim',
-    'reload',
-    '--',
-  },
-  stream = 'stdout',
-  ignore_exitcode = true,
-  parser = require('lint.parser').from_errorformat('%f:%l:%c: %m', {
-    source = 'luacheck',
-  }),
+  javascript = { 'eslint_d' },
+  javascriptreact = { 'eslint_d' },
+  typescript = { 'eslint_d' },
+  typescriptreact = { 'eslint_d' },
 }

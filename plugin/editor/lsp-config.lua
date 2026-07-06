@@ -1,11 +1,23 @@
 vim.pack.add {
   { src = 'https://github.com/neovim/nvim-lspconfig' },
 }
+-- Python: basedpyright for types/navigation, ruff's built-in LSP for
+-- lint diagnostics + code actions (fix-all, organize imports).
+vim.lsp.config('basedpyright', {
+  settings = {
+    basedpyright = {
+      -- Ruff owns import organisation
+      disableOrganizeImports = true,
+    },
+  },
+})
+
 -- See https://github.com/neovim/nvim-lspconfig
 vim.lsp.enable {
   'clangd',
   'lua_ls',
-  'pyright',
+  'basedpyright',
+  'ruff',
 }
 
 -- blink.cmp registers its completion capabilities automatically on 0.11+
