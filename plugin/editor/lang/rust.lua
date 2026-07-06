@@ -5,56 +5,26 @@ vim.pack.add {
   },
 }
 
-vim.g.rustaceanvim = function()
-  local function find_lldb_extension()
-    local base = vim.env.HOME .. '/.vscode/extensions'
-
-    for name in vim.fs.dir(base) do
-      if name:match '^vadimcn%.vscode%-lldb%-' then
-        return base .. '/' .. name
-      end
-    end
-
-    return nil
-  end
-
-  local extension_path = find_lldb_extension() or vim.env.HOME .. '/.vscode/extensions/vadimcn.vscode-lldb-1.11.8'
-  local codelldb_path = extension_path .. '/adapter/codelldb'
-  local liblldb_path = extension_path .. '/lldb/lib/liblldb'
-  local this_os = vim.uv.os_uname().sysname
-
-  -- The path is different on Windows
-  if this_os:find 'Windows' then
-    codelldb_path = extension_path .. '/adapter/codelldb.exe'
-    liblldb_path = extension_path .. '/lldb/bin/liblldb.dll'
-  else
-    -- The liblldb extension is .so for Linux and .dylib for MacOS
-    liblldb_path = liblldb_path .. (this_os == 'Linux' and '.so' or '.dylib')
-  end
-
-  local cfg = require 'rustaceanvim.config'
-  return {
-    dap = {
-      adapter = cfg.get_codelldb_adapter(codelldb_path, liblldb_path),
-    },
-    -- Clippy-on-save is handled by rustaceanvim's default
-    -- `tools.enable_clippy = true`; no `checkOnSave` settings needed.
-    server = {
-      default_settings = {
-        ['rust-analyzer'] = {
-          imports = {
-            granularity = { group = 'crate' },
-            prefix = 'crate',
-          },
-          completion = {
-            autoimport = { enable = true },
-            postfix = { enable = true },
-          },
+-- codelldb comes from mason (:MasonInstall codelldb) and is auto-detected
+-- by rustaceanvim — no dap adapter paths needed here.
+vim.g.rustaceanvim = {
+  -- Clippy-on-save is handled by rustaceanvim's default
+  -- `tools.enable_clippy = true`; no `checkOnSave` settings needed.
+  server = {
+    default_settings = {
+      ['rust-analyzer'] = {
+        imports = {
+          granularity = { group = 'crate' },
+          prefix = 'crate',
+        },
+        completion = {
+          autoimport = { enable = true },
+          postfix = { enable = true },
         },
       },
     },
-  }
-end
+  },
+}
 
 -- Set up key mappings after LSP attaches
 vim.api.nvim_create_autocmd('LspAttach', {

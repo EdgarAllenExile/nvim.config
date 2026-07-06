@@ -4,21 +4,19 @@
 
 ### Things to Add:
 
-- Vale / formatter / linter
-- Debuggers, how do they work? Do we have a nice fancy GUI? Do we need one..?
-
-### Things to Change:
-
-- Bulk install required plugins
-- is it possible to automatically remove unused plugins? 
-- Flag when need to delete old lock file
+- Vale for markdown linting
 
 ### Things to Investigate:
 
 - Mise En Place CLI Util
-- That Nvim Tips plugin
-- How good is Clue for actual vim commands
-- Have a look at snacks.nvim
+- tsgo LSP once TypeScript 7.0 is GA (faster than vtsls; code actions were
+  incomplete at RC)
+- Astral's `ty` / Meta's `pyrefly` as basedpyright alternatives once mature
+
+### Notes:
+
+- Unused plugins are removed with `vim.pack.del({'name'})` — vim.pack does
+  not remove them automatically when they leave the config.
 
 ## Design Goals
 
@@ -49,7 +47,7 @@ This could be in several places:
 | clangd | c/c++ | LSP | `brew install llvm` |
 | rust-analyzer | rust | LSP | `brew install rust-analyzer` |
 | rustfmt | rust | Formatter | `rustup component add rustfmt` |
-| codelldb | rust | DAP | `brew install --cask vscode-lldb` |
+| codelldb | rust | DAP | `:MasonInstall codelldb` (inside Neovim) |
 | roslyn-language-server | csharp | LSP | `dotnet tool install -g roslyn-language-server --prerelease` (requires the .NET SDK; see [roslyn.nvim](https://github.com/seblyng/roslyn.nvim#-installation) for the up-to-date feed) |
 | basedpyright | python | LSP | `brew install basedpyright` |
 | ruff | python | LSP (lint) / Formatter | `brew install ruff` |
@@ -68,8 +66,8 @@ This could be in several places:
 | `catppuccin/nvim` | Alternate colorscheme setup | `init.lua` / `plugin/general/colorscheme.lua` |
 | `conform.nvim` | Format on save | `plugin/editor/conform.lua` |
 | `nvim-dap` | Debug adapter client | `plugin/editor/dap.lua` |
-| `nvim-dap-ui` | DAP UI panes | `plugin/editor/dap.lua` |
-| `nvim-nio` | Async primitives for DAP UI | `plugin/editor/dap.lua` |
+| `nvim-dap-view` | Single-window debugger UI | `plugin/editor/dap.lua` |
+| `mason.nvim` | Debug adapter installer (codelldb) | `plugin/editor/dap.lua` |
 | `nvim-lint` | Filetype lint runner | `plugin/editor/lint.lua` |
 | `nvim-lspconfig` | LSP server configuration | `plugin/editor/lsp-config.lua` |
 | `nvim-treesitter` | Syntax parsing | `plugin/editor/treesitter.lua` |

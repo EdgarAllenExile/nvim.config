@@ -6,16 +6,12 @@ This file lists the active custom keybinds in this Neovim config.
 
 - `<Leader>a` AI
 - `<Leader>b` Buffer
-- `<Leader>e` Explore/Edit
+- `<Leader>d` Debug
 - `<Leader>f` Find
-- `<Leader>g` General, Git, and language actions
-- `<Leader>l` Language
-- `<Leader>m` Map
+- `<Leader>g` General and language actions
+- `<Leader>l` Language (visual mode)
 - `<Leader>n` Neovim Tips
-- `<Leader>o` Other
 - `<Leader>s` Session
-- `<Leader>t` Terminal
-- `<Leader>v` Visits
 
 ## Global Mappings
 
@@ -62,6 +58,16 @@ This file lists the active custom keybinds in this Neovim config.
 - `<leader>sS` select session to load
 - `<leader>ss` save session now
 - `<leader>sd` stop session saving (disable)
+
+## Debug (nvim-dap + dap-view)
+
+- `<leader>db` toggle breakpoint
+- `<leader>dc` continue / start
+- `<leader>di` step into
+- `<leader>do` step over
+- `<leader>dO` step out
+- `<leader>dt` terminate
+- `<leader>dv` toggle debug view
 
 ## AI (Claude Code)
 

@@ -3,11 +3,7 @@ vim.pack.add {
   'https://github.com/folke/persistence.nvim',
 }
 
--- Configure persistence.nvim
-local status_ok, persistence = pcall(require, 'persistence')
-if not status_ok then
-  return
-end
+local persistence = require 'persistence'
 
 persistence.setup {
   dir = vim.fn.stdpath 'state' .. '/sessions/', -- directory where session files are saved
