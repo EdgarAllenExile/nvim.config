@@ -5,17 +5,10 @@
 -- end
 -- vim.api.nvim_create_autocmd('FileType', { nil, f, "Proper 'formatoptions'" })
 --
--- Build hooks: run a plugin's build step after install/update.
--- (blink.cmp needs no hook: it is pinned to a release tag via its version
--- range, so it downloads its prebuilt fuzzy-matcher binary automatically.)
-vim.api.nvim_create_autocmd('PackChanged', {
-  callback = function(ev)
-    local name, kind = ev.data.spec.name, ev.data.kind
-    if name == 'telescope-fzf-native.nvim' and (kind == 'install' or kind == 'update') then
-      vim.system({ 'make' }, { cwd = ev.data.path })
-    end
-  end,
-})
+-- (No plugin build hooks needed currently: blink.cmp is pinned to a release
+-- tag via its version range, so it downloads its prebuilt matcher binary
+-- automatically. If a plugin needing a build step is added, hook the
+-- PackChanged event — see :h vim.pack.)
 
 -- I think this should stop entering comments auto
 local f = function()

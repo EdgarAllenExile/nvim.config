@@ -54,6 +54,7 @@ This could be in several places:
 | roslyn-language-server | csharp | LSP | `dotnet tool install -g roslyn-language-server --prerelease` (requires the .NET SDK; see [roslyn.nvim](https://github.com/seblyng/roslyn.nvim#-installation) for the up-to-date feed) |
 | pyright | python | LSP | `pip install pyright` or `brew install pyright` |
 | ruff | python | Formatter/Linter | `pip install ruff` or `brew install ruff` |
+| vtsls | javascript/typescript | LSP | `npm install -g @vtsls/language-server` |
 | prettierd | javascript/typescript | Formatter | `npm install -g prettierd` |
 | eslint | javascript/typescript | Linter | `npm install -g eslint` |
 
@@ -62,8 +63,7 @@ This could be in several places:
 
 | Name | Function | Filepath |
 | -------------- | -------------- | --------------- |
-| `plenary.nvim` | Lua helper library | `init.lua` |
-| `telescope.nvim` | Fuzzy finder | `init.lua` |
+| `snacks.nvim` | Fuzzy finder (picker module only) | `plugin/helper/picker.lua` |
 | `render-markdown.nvim` | Markdown rendering | `init.lua` |
 | `monokai-pro.nvim` | Active colorscheme | `init.lua` / `plugin/general/colorscheme.lua` |
 | `catppuccin/nvim` | Alternate colorscheme setup | `init.lua` / `plugin/general/colorscheme.lua` |
@@ -78,13 +78,10 @@ This could be in several places:
 | `nvim-treesitter-context` | Code context header | `plugin/editor/treesitter.lua` |
 | `roslyn.nvim` | C# LSP integration | `plugin/editor/lang/csharp.lua` |
 | `rustaceanvim` | Rust LSP and DAP integration | `plugin/editor/lang/rust.lua` |
-| `typescript-tools.nvim` | TypeScript LSP integration | `plugin/editor/lang/typescript.lua` |
 | `mini.nvim` | Core editing and workflow modules | `plugin/general/mini.nvim.lua` |
 | `claudecode.nvim` | Claude Code IDE integration (chat, diffs, context) | `plugin/helper/ai.lua` |
 | `blink.cmp` | Completion engine | `plugin/helper/blink.lua` |
 | `friendly-snippets` | Snippet collection | `plugin/helper/blink.lua` |
 | `smart-splits.nvim` | Window movement and resizing | `plugin/helper/smart-splits.lua` |
-| `telescope-fzf-native.nvim` | Telescope sorter extension | `plugin/helper/telescope.lua` |
-| `telescope-ui-select.nvim` | Telescope UI select extension | `plugin/helper/telescope.lua` |
 | `neovim-tips` | Tip browser | `plugin/helper/tips.lua` |
 | `precognition.nvim` | Motion hints | `plugin/helper/precog.lua` |

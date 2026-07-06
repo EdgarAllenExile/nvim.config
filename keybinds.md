@@ -38,21 +38,22 @@ This file lists the active custom keybinds in this Neovim config.
 - `g.` toggle dotfiles in mini.files
 - `\` toggle mini.files in CWD
 
-## Telescope
+## Picker (snacks.picker)
 
 - `<leader>fh` help tags
 - `<leader>fk` keymaps
 - `<leader>ff` files
-- `<leader>fs` telescope picker selector
-- `<leader>fw` current word
+- `<leader>fs` picker selector
+- `<leader>fw` current word (normal or visual)
 - `<leader>fg` live grep
 - `<leader>fd` diagnostics
 - `<leader>fr` resume
 - `<leader>f.` recent files
+- `<leader>fu` undo history
+- `<leader>fn` Neovim config files
 - `<leader><leader>` buffers
 - `<leader>/` current buffer search
 - `<leader>f/` live grep open files
-- `<leader>sn` Neovim config files
 
 ## Session (persistence.nvim)
 

@@ -17,12 +17,6 @@ _G.Config.new_autocmd = function(event, pattern, callback, desc)
   vim.api.nvim_create_autocmd(event, opts)
 end
 
--- These want to be loaded early because of some weirdness with the current build of nightly nvim / vim.pack
-vim.pack.add {
-  { src = 'https://github.com/nvim-lua/plenary.nvim' },
-  { src = 'https://github.com/nvim-telescope/telescope.nvim' },
-}
-
 -- Colour scheme and plugins that want to be added early
 vim.pack.add {
   { src = 'https://github.com/MeanderingProgrammer/render-markdown.nvim' },
