@@ -45,10 +45,11 @@ require('minuet').setup {
       end_point = 'http://localhost:1234/v1/completions',
       -- Identifiers are namespaced once more than one build of a model is
       -- installed. `lms ls` prints the exact key; <Leader>aM lists them live.
-      -- Roughly 2x faster if this drags: lmstudio-community/qwen2.5-coder-3b
-      -- (~0.6s, 72% valid). Pick that build specifically --- the mlx-community
-      -- 3B was deleted for scoring 17% valid and emitting mangled tokens
-      -- ('if   it not i n seen.add(it)'), i.e. a damaged quant.
+      -- Roughly 2x faster if this drags: 'qwen2.5-coder-3b' (~0.6s, 72% valid).
+      -- That bare id is the GGUF build --- the mlx-community 4-bit 3B was
+      -- deleted for scoring 17% valid and emitting mangled tokens
+      -- ('if   it not i n seen.add(it)'). Deleting it left one 3B, so the id
+      -- un-namespaced itself from lmstudio-community/qwen2.5-coder-3b.
       model = 'mlx-community/qwen2.5-coder-7b',
       -- LM Studio needs no auth; minuet just wants a non-nil env var name.
       api_key = 'TERM',
