@@ -37,8 +37,9 @@ require('blink.cmp').setup {
         name = 'minuet',
         module = 'minuet.blink',
         async = true,
-        -- 7B measures ~2.4s warm and ~3.7s cold on this machine, so the usual
-        -- 3000 would silently drop real completions. Only <A-i> waits on this.
+        -- 7B measures ~1.2s warm median / ~4.8s worst on this machine, and a
+        -- reload costs ~6.5s page-cached or ~17s cold, so the usual 3000 would
+        -- silently drop real completions. Only <A-i> waits on this.
         timeout_ms = 10000,
         score_offset = 50,
       },

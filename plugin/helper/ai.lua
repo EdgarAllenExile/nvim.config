@@ -22,9 +22,18 @@ require('minuet').setup {
   provider = 'openai_fim_compatible',
   n_completions = 1, -- local inference: one candidate, not three
   context_window = 2048, -- characters; minuet's own guidance for local models
-  -- Measured on this machine (M5, 683-token context, ~63 generated tokens):
-  -- 7B ~2.4s warm / ~3.7s cold, 3B ~1.4s warm. Latency is generation-bound and
-  -- linear in max_tokens, so that is the dial to turn --- not the context size.
+  -- Measured on this machine (M5, ~2k-char context, cache-busted prompts), with
+  -- the <|fim_pad|> stop below in place: 7B ~1.2s warm median / ~4.8s worst,
+  -- 3B ~0.6s. Latency is generation-bound and linear in max_tokens, so that is
+  -- the dial to turn --- not the context size.
+  --
+  -- Reload cost is separate and bimodal: ~6.5s when the weights are still in the
+  -- OS page cache, ~17s genuinely cold from disk. The 10s below therefore covers
+  -- the common reload but not a cold one. Raising it is the wrong fix --- the
+  -- model is only reloading because something else JIT-evicted it (the
+  -- local-llm journal Stop hook loads ministral after every Claude Code
+  -- session). Pin it instead: `lms load <model> --ttl 7200`. Models coexist
+  -- happily; three fit in 24GB at once.
   request_timeout = 10,
   throttle = 1500,
   debounce = 600,
@@ -36,7 +45,10 @@ require('minuet').setup {
       end_point = 'http://localhost:1234/v1/completions',
       -- Identifiers are namespaced once more than one build of a model is
       -- installed. `lms ls` prints the exact key; <Leader>aM lists them live.
-      -- mlx-community/qwen2.5-coder-3b is ~2x faster if this drags.
+      -- Roughly 2x faster if this drags: lmstudio-community/qwen2.5-coder-3b
+      -- (~0.6s, 72% valid). Pick that build specifically --- the mlx-community
+      -- 3B was deleted for scoring 17% valid and emitting mangled tokens
+      -- ('if   it not i n seen.add(it)'), i.e. a damaged quant.
       model = 'mlx-community/qwen2.5-coder-7b',
       -- LM Studio needs no auth; minuet just wants a non-nil env var name.
       api_key = 'TERM',
@@ -64,6 +76,15 @@ require('minuet').setup {
           '<|fim_suffix|>',
           '<|fim_middle|>',
           '<|file_sep|>',
+          -- <|fim_pad|> is load-bearing, not belt-and-braces: this model ends a
+          -- completion by emitting it on repeat rather than <|endoftext|>. Left
+          -- out, the useful output is followed by ~49 literal '<|fim_pad|>' in
+          -- the ghost text and the full max_tokens budget is spent. Measured
+          -- over 12 completions, adding these three: 2.43s -> 1.18s median,
+          -- 25% -> 91% syntactically valid, 7/12 -> 0/12 sentinel leaks.
+          '<|fim_pad|>',
+          '<|repo_name|>',
+          '<|cursor|>',
         },
       },
     },
