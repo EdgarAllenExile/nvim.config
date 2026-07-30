@@ -81,6 +81,22 @@ This file lists the active custom keybinds in this Neovim config.
 - `<Leader>aa` accept Claude diff
 - `<Leader>ad` deny Claude diff
 
+## AI completion (minuet + LM Studio)
+
+Local FIM completion against the LM Studio server on `:1234`. Nothing is sent
+to the model unless one of these keys is pressed --- auto-trigger is off.
+
+- `<Leader>ag` toggle ghost text (auto-suggest) for the current buffer
+- `<Leader>aM` select the local model (e.g. swap 7B for 3B)
+- `<A-i>` (insert) request a completion into the blink menu
+
+Ghost text keys, live once `<Leader>ag` is on:
+
+- `<A-y>` (insert) accept the whole suggestion
+- `<A-Y>` (insert) accept one line
+- `<A-n>` / `<A-p>` (insert) next / previous suggestion
+- `<A-e>` (insert) dismiss
+
 ## LSP
 
 Built-in Neovim defaults (see `:h lsp-defaults`): `grn` rename, `grr`
