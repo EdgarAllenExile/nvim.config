@@ -86,8 +86,11 @@ This file lists the active custom keybinds in this Neovim config.
 Local FIM completion against the LM Studio server on `:1234`. Nothing is sent
 to the model unless one of these keys is pressed --- auto-trigger is off.
 
-- `<Leader>ag` toggle ghost text (auto-suggest) for the current buffer
-- `<Leader>aM` select the local model (e.g. swap 7B for 3B)
+- `<Leader>ag` toggle ghost text (auto-suggest) for the current buffer; also
+  pins the model in memory, since that is a clear signal you are about to use it
+- `<Leader>aM` select the local model (e.g. swap 7B for 3B). Embedding and
+  reranker models are filtered out; resident ones are marked `[loaded]`
+- `<Leader>aP` pin the model in memory so a background JIT load cannot evict it
 - `<A-i>` (insert) request a completion into the blink menu
 
 Ghost text keys, live once `<Leader>ag` is on:

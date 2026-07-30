@@ -120,18 +120,37 @@ nmap_leader('ad', '<Cmd>ClaudeCodeDiffDeny<CR>', 'Deny diff')
 
 vim.keymap.set('x', '<Leader>as', '<Cmd>ClaudeCodeSend<CR>', { desc = 'Send selection to Claude' })
 
+local LMS = vim.fn.expand '~/.lmstudio/bin/lms'
+
+-- Embedding and reranker models produce garbage rather than an error if handed
+-- to a completion request, so they must never reach the picker. LM Studio's own
+-- `type` field does not identify them --- it reports bge-m3, two rerankers and
+-- three embedding models all as `llm` --- so match on the id as well.
+local function is_completion_model(m)
+  if m.type == 'embeddings' then
+    return false
+  end
+  local id = m.id:lower()
+  return not (id:find 'embed' or id:find 'rerank' or id:find '^bge%-')
+end
+
 -- `:Minuet change_model` reads a hardcoded per-provider model list that has no
 -- LMStudio entry, so it would offer an empty menu here. Ask the server what it
--- actually has instead.
+-- actually has instead. /api/v0/ is LM Studio's native API: same models as
+-- /v1/models but with `type` and a load `state` the OpenAI shape omits.
 local function pick_local_model()
-  vim.system({ 'curl', '-sS', '-m', '5', 'http://localhost:1234/v1/models' }, { text = true }, function(res)
+  vim.system({ 'curl', '-sS', '-m', '5', 'http://localhost:1234/api/v0/models' }, { text = true }, function(res)
     local ids = {}
     if res.code == 0 then
       local ok, decoded = pcall(vim.json.decode, res.stdout)
       if ok and decoded.data then
-        ids = vim.tbl_map(function(m)
-          return m.id
-        end, decoded.data)
+        for _, m in ipairs(decoded.data) do
+          if m.id and is_completion_model(m) then
+            -- Surface already-resident models: picking one of those skips a
+            -- reload entirely (~6.5s page-cached, ~17s cold).
+            table.insert(ids, m.state == 'loaded' and (m.id .. '  [loaded]') or m.id)
+          end
+        end
         table.sort(ids)
       end
     end
@@ -145,6 +164,7 @@ local function pick_local_model()
         if not choice then
           return
         end
+        choice = (choice:gsub('%s+%[loaded%]$', ''))
         require('minuet').config.provider_options.openai_fim_compatible.model = choice
         vim.notify('minuet model: ' .. choice)
       end)
@@ -152,6 +172,74 @@ local function pick_local_model()
   end)
 end
 
+-- Pin the completion model in memory so it survives being JIT-evicted.
+--
+-- The eviction is not the 1h TTL --- it is the local-llm journal Stop hook
+-- (~/.claude/local-llm/hooks/session-journal.sh), which loads ministral after
+-- every Claude Code session. LM Studio auto-unloads *JIT-loaded* models to make
+-- room; a model loaded explicitly with --ttl persists instead, and several
+-- coexist happily (three fit in 24GB).
+--
+-- `lms load` is NOT idempotent: run against an already-resident model it loads a
+-- second 4GB copy under a `:2` identifier. So check `state` first and only load
+-- when actually absent.
+local function pin_local_model(opts)
+  opts = opts or {}
+  local model = require('minuet').config.provider_options.openai_fim_compatible.model
+  vim.system({ 'curl', '-sS', '-m', '5', 'http://localhost:1234/api/v0/models' }, { text = true }, function(res)
+    local state
+    if res.code == 0 then
+      local ok, decoded = pcall(vim.json.decode, res.stdout)
+      if ok and decoded.data then
+        for _, m in ipairs(decoded.data) do
+          if m.id == model then
+            state = m.state
+          end
+        end
+      end
+    end
+
+    if state == nil then
+      if not opts.quiet then
+        vim.schedule(function()
+          vim.notify('Cannot reach LM Studio on :1234 --- not pinning ' .. model, vim.log.levels.WARN)
+        end)
+      end
+      return
+    end
+
+    if state == 'loaded' then
+      if not opts.quiet then
+        vim.schedule(function()
+          vim.notify('Already resident: ' .. model)
+        end)
+      end
+      return
+    end
+
+    -- 2h, refreshed on every use, so an active editing session never expires.
+    vim.system({ LMS, 'load', model, '--ttl', '7200', '-y' }, { text = true }, function(load)
+      vim.schedule(function()
+        if load.code == 0 then
+          vim.notify('Pinned ' .. model .. ' (ttl 2h)')
+        elseif not opts.quiet then
+          vim.notify('Failed to pin ' .. model .. ': ' .. (load.stderr or ''), vim.log.levels.ERROR)
+        end
+      end)
+    end)
+  end)
+end
+
+-- Pin on the clearest "about to use this" signal rather than at startup ---
+-- opening nvim to edit a commit message should not drag 4GB into memory.
+-- For a machine-wide pin independent of nvim, a LaunchAgent running the same
+-- `lms load --ttl` at login would do it.
+local function toggle_ghost_text()
+  pin_local_model { quiet = true }
+  vim.cmd 'Minuet virtualtext toggle'
+end
+
 -- Local completion (minuet). <Leader>am is taken by Claude, hence aM.
-nmap_leader('ag', '<Cmd>Minuet virtualtext toggle<CR>', 'Toggle AI ghost text')
+nmap_leader('ag', toggle_ghost_text, 'Toggle AI ghost text')
 nmap_leader('aM', pick_local_model, 'Select local model')
+nmap_leader('aP', pin_local_model, 'Pin local model in memory')
