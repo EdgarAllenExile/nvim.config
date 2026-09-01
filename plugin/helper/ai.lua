@@ -30,10 +30,9 @@ require('minuet').setup {
   -- Reload cost is separate and bimodal: ~6.5s when the weights are still in the
   -- OS page cache, ~17s genuinely cold from disk. The 10s below therefore covers
   -- the common reload but not a cold one. Raising it is the wrong fix --- the
-  -- model is only reloading because something else JIT-evicted it (the
-  -- local-llm journal Stop hook loads ministral after every Claude Code
-  -- session). Pin it instead: `lms load <model> --ttl 7200`. Models coexist
-  -- happily; three fit in 24GB at once.
+  -- model is only reloading because something else JIT-evicted it. Pin it
+  -- instead: `lms load <model> --ttl 7200`. Models coexist happily; three fit
+  -- in 24GB at once.
   request_timeout = 10,
   throttle = 1500,
   debounce = 600,
@@ -174,11 +173,10 @@ end
 
 -- Pin the completion model in memory so it survives being JIT-evicted.
 --
--- The eviction is not the 1h TTL --- it is the local-llm journal Stop hook
--- (~/.claude/local-llm/hooks/session-journal.sh), which loads ministral after
--- every Claude Code session. LM Studio auto-unloads *JIT-loaded* models to make
--- room; a model loaded explicitly with --ttl persists instead, and several
--- coexist happily (three fit in 24GB).
+-- The eviction is not the 1h TTL --- LM Studio auto-unloads *JIT-loaded* models
+-- to make room, so anything that JIT-loads another model can evict this one. A
+-- model loaded explicitly with --ttl persists instead, and several coexist
+-- happily (three fit in 24GB).
 --
 -- `lms load` is NOT idempotent: run against an already-resident model it loads a
 -- second 4GB copy under a `:2` identifier. So check `state` first and only load
